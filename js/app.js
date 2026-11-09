@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let greeting = 'Good morning';
     if (hours >= 12 && hours < 17) greeting = 'Good afternoon';
     else if (hours >= 17 || hours < 5) greeting = 'Good evening';
-    el.greetingTitle.textContent = `${greeting}, Sameera — Overview`;
+    el.greetingTitle.textContent = `${greeting}, Sameera \u2014 FocusFlow OS`;
 
     // Last updated string
     const timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
