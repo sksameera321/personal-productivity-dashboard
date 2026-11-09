@@ -21,23 +21,23 @@ The entire system was developed from the ground up using **pure semantic HTML5, 
 
 ---
 
-## 2. FocusFlow OS Glassmorphism Design System
+## 2. FocusFlow OS Hybrid Design System (Glassmorphism + Skeuomorphism)
 
 ### A. Frosted Glass Architecture
-- **Ambient Glowing Light Mesh**: Floating organic radiant light orbs (`.ambient-mesh-canvas`) behind the interface that provide luminous color gradients for the frosted glass to refract and blur.
-- **Translucent Glass Surfaces**: Precision-calibrated `backdrop-filter: blur(20px) saturate(180%)` applied to the sidebar, topbar, summary cards, velocity charts, data table, dialogs, and pills.
-- **Specular Edge Highlights**: Multi-layered box shadows with ultra-fine glass borders (`1px solid var(--glass-border)`) and top specular rim lighting (`inset 0 1px 1px rgba(255, 255, 255, 0.4)`).
+- **Ambient Glowing Light Mesh**: Floating organic radiant light orbs (`.ambient-mesh-canvas`) behind the interface providing rich luminous color gradients for the frosted glass to refract and blur.
+- **Translucent Glass Surfaces**: Precision-calibrated `backdrop-filter: blur(22px) saturate(185%)` applied to the sidebar, topbar, summary cards, velocity charts, data table, dialogs, and pills.
 - **Dual Light & Dark Glass Themes**:
-  - **Light Glass**: Crystalline frosted white glass (`rgba(255, 255, 255, 0.62)`) with sapphire and emerald ambient refraction.
-  - **Dark Glass**: Deep obsidian tinted glass (`rgba(18, 24, 38, 0.58)`) with electric blue and purple backlighting.
-- **Signature Accents**:
-  - **Primary Electric Blue (`#2563EB`)**: Brand logo, primary CTA buttons, and active tabs.
-  - **Chart 4 Emerald (`#10B981`)**: Completed items, positive velocity trends, and goal progress.
-  - **Chart 3 Amber (`#F59E0B`)**: Medium priority focus.
-  - **Chart 5 Crimson (`#EF4444`)**: High priority alerts and overdue indicators.
-  - **Chart 2 Purple (`#8B5CF6`)**: Low priority allocations.
-- **Conic Metallic Icon Badges (`--dashboard-icon-bg`)**: Signature brushed metallic gradient icons paired with subtle drop shadows.
-- **Gold Premium Badge**: `linear-gradient(90deg, #EFE189 0%, #EBC745 50%, #E7AD00 100%)` representing academic honors.
+  - **Light Glass**: Crystalline frosted white glass (`rgba(255, 255, 255, 0.65)`) with sapphire and emerald ambient refraction.
+  - **Dark Glass**: Deep obsidian tinted glass (`rgba(18, 24, 38, 0.6)`) with electric blue and purple backlighting.
+
+### B. Tactile Skeuomorphic Depth & Physical Micro-Controls
+- **Debossed Concave Input Wells**: Search inputs and goal inputs engineered with deep concave stamping (`box-shadow: var(--skeuo-concave-well)`), inner drop shadows, and specular bottom ledges.
+- **Extruded Physical Push Buttons**: Primary CTA (`+ New Task`), period buttons, and action buttons feature 3D beveled rims, top edge specular lighting, and physical depression physics (`:active { transform: translateY(2px) }`).
+- **Milled Grooves & Tactile Sliders**: Segmented controls (period selector and task status filters) sculpted as milled metallic grooves with raised physical sliding buttons.
+- **Mechanical Micro-Switch Checkboxes**: Checkboxes styled as recessed mechanical switch wells that illuminate into a glowing tactile emerald LED indicator upon completion (`box-shadow: 0 0 10px rgba(16, 185, 129, 0.7)`).
+- **Machined Metallic Conic Badges**: Icon badges feature brushed radial conic gradients with chrome bezels and 3D beveled rims (`--skeuo-chrome-rim`).
+- **Tactile Keypad Day Chips**: Weekly schedule chips styled as physical mechanical keys with embossed top bevels and bottom edge thickness.
+- **Physical Beveled Glass Slabs**: Dashboard cards feature double-rim physical beveling with top specular highlights and bottom drop ledges.
 
 ---
 
@@ -160,7 +160,7 @@ Open your browser to:
 
 ## 7. Submission Checklist
 
-- [x] **FocusFlow OS UI Architecture**: High-density productivity workspace with full Glassmorphism design system.
+- [x] **FocusFlow OS UI Architecture**: High-density productivity workspace with full Glassmorphism & Skeuomorphism design systems.
 - [x] **Dark & Light Mode**: Complete dual theme support with instant toggle and local persistence.
 - [x] **Pure Vanilla Stack**: Semantic HTML5, CSS3 Grid/Flexbox, Vanilla JavaScript ES6+, LocalStorage. Zero framework bloat.
 - [x] **Data Persistence**: Changes persist across reloads; deleted tasks never reappear.
