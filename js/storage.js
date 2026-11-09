@@ -7,7 +7,8 @@
 const STORAGE_KEYS = {
   TASKS: 'ppd_tasks_v1',
   GOALS: 'ppd_goals_v1',
-  SETTINGS: 'ppd_settings_v1'
+  SETTINGS: 'ppd_settings_v1',
+  INITIALIZED: 'ppd_initialized_v1'
 };
 
 const Storage = {
@@ -80,6 +81,13 @@ const Storage = {
    * Seed realistic initial data if running for the first time
    */
   seedInitialDataIfEmpty() {
+    // If the application was already initialized on this browser, do not re-seed.
+    // This strictly ensures deleted tasks or cleared goals do NOT reappear after refresh.
+    const isInitialized = localStorage.getItem(STORAGE_KEYS.INITIALIZED);
+    if (isInitialized) {
+      return;
+    }
+
     const existingTasks = this.getTasks();
     const existingGoals = this.getGoals();
 
@@ -99,7 +107,7 @@ const Storage = {
     dayAfter.setDate(dayAfter.getDate() + 2);
     const dayAfterStr = formatDate(dayAfter);
 
-    if (existingTasks === null || existingTasks.length === 0) {
+    if (existingTasks === null) {
       const sampleTasks = [
         {
           id: 'task_' + Date.now() + '_1',
@@ -141,7 +149,7 @@ const Storage = {
       this.saveTasks(sampleTasks);
     }
 
-    if (existingGoals === null || existingGoals.length === 0) {
+    if (existingGoals === null) {
       const sampleGoals = [
         {
           id: 'goal_' + Date.now() + '_1',
@@ -164,5 +172,8 @@ const Storage = {
       ];
       this.saveGoals(sampleGoals);
     }
+
+    // Mark as initialized so future page refreshes preserve user changes faithfully
+    localStorage.setItem(STORAGE_KEYS.INITIALIZED, 'true');
   }
 };
