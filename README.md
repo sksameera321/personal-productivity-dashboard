@@ -21,20 +21,23 @@ The entire system was developed from the ground up using **pure semantic HTML5, 
 
 ---
 
-## 2. Capitalio Design System & Visual Architecture
+## 2. Capitalio Glassmorphism Design System
 
-### A. Color Palette & Token Hierarchy
-- **Dual Light & Dark Theme**: Full dynamic theme switching with instant persistence in `localStorage`.
-  - **Light Mode**: High-contrast white canvas (`#FFFFFF`), neutral elevated card surfaces (`#FFFFFF`), subtle border dividers (`#E5E7EB`), and dark text (`#141416`).
-  - **Dark Mode**: Deep obsidian background (`#151517`), elevated card surfaces (`#151517`), charcoal borders (`#26262B`), and crisp white typography (`#FFFFFF`).
-- **Signature Accents (Capitalio Spectrum)**:
+### A. Frosted Glass Architecture
+- **Ambient Glowing Light Mesh**: Floating organic radiant light orbs (`.ambient-mesh-canvas`) behind the interface that provide luminous color gradients for the frosted glass to refract and blur.
+- **Translucent Glass Surfaces**: Precision-calibrated `backdrop-filter: blur(20px) saturate(180%)` applied to the sidebar, topbar, summary cards, velocity charts, data table, dialogs, and pills.
+- **Specular Edge Highlights**: Multi-layered box shadows with ultra-fine glass borders (`1px solid var(--glass-border)`) and top specular rim lighting (`inset 0 1px 1px rgba(255, 255, 255, 0.4)`).
+- **Dual Light & Dark Glass Themes**:
+  - **Light Glass**: Crystalline frosted white glass (`rgba(255, 255, 255, 0.62)`) with sapphire and emerald ambient refraction.
+  - **Dark Glass**: Deep obsidian tinted glass (`rgba(18, 24, 38, 0.58)`) with electric blue and purple backlighting.
+- **Signature Accents**:
   - **Primary Electric Blue (`#2563EB`)**: Brand logo, primary CTA buttons, and active tabs.
-  - **Chart 4 Emerald (`#00DA92`)**: Completed items, positive velocity trends, and goal progress.
-  - **Chart 3 Amber (`#FF7A00`)**: Medium priority focus.
-  - **Chart 5 Crimson (`#E10B05`)**: High priority alerts and overdue indicators.
-  - **Chart 2 Purple (`#7466F6`)**: Low priority allocations.
+  - **Chart 4 Emerald (`#10B981`)**: Completed items, positive velocity trends, and goal progress.
+  - **Chart 3 Amber (`#F59E0B`)**: Medium priority focus.
+  - **Chart 5 Crimson (`#EF4444`)**: High priority alerts and overdue indicators.
+  - **Chart 2 Purple (`#8B5CF6`)**: Low priority allocations.
 - **Conic Metallic Icon Badges (`--dashboard-icon-bg`)**: Signature brushed metallic gradient icons paired with subtle drop shadows.
-- **Gold Premium Badge**: `linear-gradient(90deg, #EFE189 0%, #EBC745 50%, #E7AD00 100%)` representing academic status.
+- **Gold Premium Badge**: `linear-gradient(90deg, #EFE189 0%, #EBC745 50%, #E7AD00 100%)` representing academic honors.
 
 ---
 
