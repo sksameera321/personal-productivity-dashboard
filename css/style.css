@@ -1,6 +1,6 @@
 /* ==========================================================================
-   Capitalio FocusFlow — Full Glassmorphism Design System
-   Inspired by Capitalio Dashboard & Modern Frosted Glass Aesthetics
+   FocusFlow OS — Glassmorphism + Skeuomorphism Design System
+   Tactile Frosted Glass, Debossed Grooves & Physical Extruded Controls
    Developer: Sameera Bhanu | B.Tech CSE (First Year)
    ========================================================================== */
 
@@ -10,31 +10,39 @@
   --radius-lg: 1rem;
   --radius-full: 9999px;
   
-  /* Glass Light Theme Canvas */
-  --bg-gradient: radial-gradient(at 0% 0%, #F0F4FF 0%, #FDFBFF 50%, #F5F3FF 100%);
-  --background: #F3F4F8;
+  /* Canvas Background */
+  --bg-gradient: radial-gradient(at 0% 0%, #EEF2FF 0%, #F8FAFC 50%, #F1F5F9 100%);
+  --background: #F1F5F9;
   --foreground: #0F172A;
   
   /* Frosted Glass Surface Tokens (Light) */
-  --glass-bg: rgba(255, 255, 255, 0.62);
-  --glass-bg-hover: rgba(255, 255, 255, 0.78);
-  --glass-bg-elevated: rgba(255, 255, 255, 0.82);
-  --glass-border: rgba(255, 255, 255, 0.65);
-  --glass-border-subtle: rgba(255, 255, 255, 0.45);
-  --glass-border-specular: rgba(255, 255, 255, 0.9);
-  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.06), 0 1px 2px 0 rgba(0, 0, 0, 0.02);
-  --glass-shadow-hover: 0 12px 40px 0 rgba(31, 38, 135, 0.12), 0 2px 6px 0 rgba(0, 0, 0, 0.04);
-  --glass-blur: blur(20px) saturate(180%);
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-bg-hover: rgba(255, 255, 255, 0.82);
+  --glass-bg-elevated: rgba(255, 255, 255, 0.88);
+  --glass-border: rgba(255, 255, 255, 0.7);
+  --glass-border-subtle: rgba(255, 255, 255, 0.5);
+  --glass-border-specular: rgba(255, 255, 255, 0.95);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07), 0 2px 4px 0 rgba(0, 0, 0, 0.03);
+  --glass-shadow-hover: 0 14px 40px 0 rgba(31, 38, 135, 0.12), 0 4px 8px 0 rgba(0, 0, 0, 0.05);
+  --glass-blur: blur(22px) saturate(185%);
+  
+  /* Skeuomorphic Tactile Depth Tokens (Light) */
+  --skeuo-card-bevel: inset 0 1px 1px 0 rgba(255, 255, 255, 0.95), inset 0 -1px 1px 0 rgba(0, 0, 0, 0.04);
+  --skeuo-concave-well: inset 0 2px 4px rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 0 rgba(255, 255, 255, 0.9);
+  --skeuo-convex-button: 0 4px 6px -1px rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.45), inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+  --skeuo-convex-button-pressed: inset 0 3px 5px rgba(0, 0, 0, 0.25), inset 0 1px 2px rgba(0, 0, 0, 0.18), 0 1px 0 rgba(255, 255, 255, 0.7);
+  --skeuo-groove: inset 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.8);
+  --skeuo-chrome-rim: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 3px 8px rgba(0, 0, 0, 0.14), inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 -2px 3px rgba(0, 0, 0, 0.2);
   
   /* Color Accents */
   --primary: #2563EB;
   --primary-hover: #1D4ED8;
   --primary-glass: rgba(37, 99, 235, 0.12);
-  --primary-glass-border: rgba(37, 99, 235, 0.28);
+  --primary-glass-border: rgba(37, 99, 235, 0.35);
   --primary-foreground: #FFFFFF;
   
   --secondary-glass: rgba(255, 255, 255, 0.45);
-  --secondary-glass-hover: rgba(255, 255, 255, 0.7);
+  --secondary-glass-hover: rgba(255, 255, 255, 0.75);
   --secondary-foreground: #1E293B;
   
   --muted-foreground: #64748B;
@@ -42,28 +50,28 @@
   
   --destructive: #EF4444;
   --destructive-glass: rgba(239, 68, 68, 0.12);
-  --destructive-glass-border: rgba(239, 68, 68, 0.25);
+  --destructive-glass-border: rgba(239, 68, 68, 0.3);
   --destructive-foreground: #FFFFFF;
   
-  /* Chart Spectrum */
+  /* Vibrant Chart Spectrum */
   --chart-1: #2563EB;
   --chart-2: #8B5CF6;
   --chart-3: #F59E0B;
   --chart-4: #10B981;
   --chart-5: #EF4444;
   
-  /* Brushed Conic Metallic Icon Background */
-  --dashboard-icon-bg: conic-gradient(from 90deg, #5e5959 0%, #413f3f 6.25%, #242424 12.5%, #1d1b1b 28.481%, #2c2a2a 31.034%, #3b3838 33.588%, #585656 38.694%, #3e3c3c 46.951%, #242222 55.208%, #353232 62.885%, #464242 70.562%, #353333 76.351%, #242424 82.14%, #413f3f 91.07%, #5e5959 100%);
-  --dashboard-icon-shadow: 0 4px 10px rgba(0, 0, 0, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  /* Brushed Conic Metallic Bezel */
+  --dashboard-icon-bg: conic-gradient(from 90deg, #6B7280 0%, #4B5563 8%, #374151 15%, #1F2937 28%, #374151 32%, #4B5563 35%, #6B7280 40%, #4B5563 48%, #1F2937 56%, #374151 63%, #4B5563 71%, #374151 77%, #1F2937 83%, #4B5563 92%, #6B7280 100%);
+  --dashboard-icon-shadow: 0 4px 10px rgba(0, 0, 0, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.4), inset 0 -2px 3px rgba(0, 0, 0, 0.3);
   
   /* Sidebar Tokens */
   --sidebar-width: 16rem;
-  --sidebar-glass: rgba(255, 255, 255, 0.68);
-  --sidebar-border: rgba(255, 255, 255, 0.65);
+  --sidebar-glass: rgba(255, 255, 255, 0.7);
+  --sidebar-border: rgba(255, 255, 255, 0.7);
   
   /* Topbar Tokens */
-  --topbar-glass: rgba(255, 255, 255, 0.68);
-  --topbar-border: rgba(255, 255, 255, 0.65);
+  --topbar-glass: rgba(255, 255, 255, 0.7);
+  --topbar-border: rgba(255, 255, 255, 0.7);
   
   /* Premium Gold Badge */
   --premium-from: #EFE189;
@@ -76,7 +84,7 @@
 }
 
 /* ==========================================================================
-   Glassmorphism Dark Theme
+   Dark Theme (Obsidian Glass + Tactile Skeuomorphism)
    ========================================================================== */
 [data-theme="dark"],
 .dark {
@@ -85,18 +93,26 @@
   --foreground: #F8FAFC;
   
   /* Frosted Glass Surface Tokens (Dark) */
-  --glass-bg: rgba(18, 24, 38, 0.58);
-  --glass-bg-hover: rgba(24, 32, 50, 0.72);
-  --glass-bg-elevated: rgba(24, 32, 52, 0.75);
+  --glass-bg: rgba(18, 24, 38, 0.6);
+  --glass-bg-hover: rgba(24, 32, 52, 0.75);
+  --glass-bg-elevated: rgba(26, 35, 56, 0.8);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-border-subtle: rgba(255, 255, 255, 0.04);
-  --glass-border-specular: rgba(255, 255, 255, 0.12);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-  --glass-shadow-hover: 0 14px 45px 0 rgba(0, 0, 0, 0.6), 0 2px 6px 0 rgba(0, 0, 0, 0.4);
+  --glass-border-specular: rgba(255, 255, 255, 0.16);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 0 2px 4px 0 rgba(0, 0, 0, 0.35);
+  --glass-shadow-hover: 0 16px 48px 0 rgba(0, 0, 0, 0.65), 0 4px 8px 0 rgba(0, 0, 0, 0.45);
   --glass-blur: blur(24px) saturate(190%);
   
+  /* Skeuomorphic Tactile Depth Tokens (Dark) */
+  --skeuo-card-bevel: inset 0 1px 1px 0 rgba(255, 255, 255, 0.16), inset 0 -1px 1px 0 rgba(0, 0, 0, 0.5);
+  --skeuo-concave-well: inset 0 2px 5px rgba(0, 0, 0, 0.55), inset 0 1px 2px rgba(0, 0, 0, 0.65), 0 1px 0 rgba(255, 255, 255, 0.08);
+  --skeuo-convex-button: 0 4px 10px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -2px 0 rgba(0, 0, 0, 0.45);
+  --skeuo-convex-button-pressed: inset 0 3px 6px rgba(0, 0, 0, 0.65), inset 0 1px 2px rgba(0, 0, 0, 0.45), 0 1px 0 rgba(255, 255, 255, 0.06);
+  --skeuo-groove: inset 0 2px 5px rgba(0, 0, 0, 0.55), 0 1px 0 rgba(255, 255, 255, 0.07);
+  --skeuo-chrome-rim: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 4px 10px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.35), inset 0 -2px 4px rgba(0, 0, 0, 0.5);
+  
   --primary-glass: rgba(37, 99, 235, 0.22);
-  --primary-glass-border: rgba(59, 130, 246, 0.4);
+  --primary-glass-border: rgba(59, 130, 246, 0.45);
   
   --secondary-glass: rgba(255, 255, 255, 0.05);
   --secondary-glass-hover: rgba(255, 255, 255, 0.1);
@@ -105,19 +121,17 @@
   --muted-foreground: #94A3B8;
   --text-disabled: #64748B;
   
-  --destructive-glass: rgba(239, 68, 68, 0.2);
-  --destructive-glass-border: rgba(239, 68, 68, 0.4);
+  --destructive-glass: rgba(239, 68, 68, 0.22);
+  --destructive-glass-border: rgba(239, 68, 68, 0.45);
   
-  --sidebar-glass: rgba(12, 17, 29, 0.68);
+  --sidebar-glass: rgba(12, 17, 29, 0.72);
   --sidebar-border: rgba(255, 255, 255, 0.07);
   
-  --topbar-glass: rgba(12, 17, 29, 0.68);
+  --topbar-glass: rgba(12, 17, 29, 0.72);
   --topbar-border: rgba(255, 255, 255, 0.07);
 }
 
-/* ==========================================================================
-   Base Setup & Ambient Gradient Glow Mesh (Behind the Glass)
-   ========================================================================== */
+/* Base Setup */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -136,7 +150,7 @@ html, body {
   overflow: hidden;
 }
 
-/* Ambient Glowing Light Orbs for Refraction */
+/* Ambient Glowing Light Mesh Behind Glass */
 .ambient-mesh-canvas {
   position: fixed;
   inset: 0;
@@ -148,7 +162,7 @@ html, body {
 .ambient-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
+  filter: blur(95px);
   opacity: 0.45;
   animation: floatGlow 18s ease-in-out infinite alternate;
 }
@@ -157,7 +171,7 @@ html, body {
   width: 520px;
   height: 520px;
   top: -100px;
-  left: 5%;
+  left: 6%;
   background: radial-gradient(circle, #3B82F6 0%, #60A5FA 40%, transparent 75%);
   animation-duration: 20s;
 }
@@ -166,7 +180,7 @@ html, body {
   width: 600px;
   height: 600px;
   bottom: -120px;
-  right: 5%;
+  right: 6%;
   background: radial-gradient(circle, #8B5CF6 0%, #A855F7 40%, transparent 75%);
   animation-duration: 25s;
   animation-delay: -5s;
@@ -183,23 +197,16 @@ html, body {
 }
 
 @keyframes floatGlow {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(30px, 40px) scale(1.08);
-  }
-  100% {
-    transform: translate(-30px, -20px) scale(0.95);
-  }
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, 40px) scale(1.08); }
+  100% { transform: translate(-30px, -20px) scale(0.95); }
 }
 
-/* Dark mode orb adjustments */
 [data-theme="dark"] .ambient-orb {
   opacity: 0.32;
 }
 
-/* App Outer Layout */
+/* App Outer Shell */
 .capitalio-app-layout {
   position: relative;
   display: flex;
@@ -226,7 +233,7 @@ html, body {
 }
 
 /* ==========================================================================
-   1. Left Sidebar Navigation (Frosted Glass)
+   1. Left Sidebar Navigation (Frosted Glass + Tactile Bevels)
    ========================================================================== */
 .capitalio-sidebar {
   width: var(--sidebar-width);
@@ -237,7 +244,7 @@ html, body {
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border-right: 1px solid var(--sidebar-border);
-  box-shadow: 4px 0 24px 0 rgba(0, 0, 0, 0.04);
+  box-shadow: 4px 0 24px 0 rgba(0, 0, 0, 0.04), inset -1px 0 0 rgba(255, 255, 255, 0.2);
   flex-shrink: 0;
   padding: 1.25rem 1rem;
   transition: transform var(--transition-normal);
@@ -263,7 +270,9 @@ html, body {
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: var(--skeuo-chrome-rim);
   flex-shrink: 0;
 }
 
@@ -333,6 +342,7 @@ html, body {
   background: var(--secondary-glass-hover);
   color: var(--foreground);
   border-color: var(--glass-border-subtle);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
 .nav-link-left {
@@ -357,22 +367,24 @@ html, body {
   border-radius: var(--radius-full);
   background: var(--secondary-glass);
   border: 1px solid var(--glass-border-subtle);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
   color: var(--muted-foreground);
 }
 
-/* Active Navigation Item (Glass Glow) */
+/* Active Nav Item (Tactile Inset Glass Key) */
 .nav-link.active-sidebar-item {
   background: var(--primary-glass);
   color: var(--foreground);
   font-weight: 600;
   border: 1px solid var(--primary-glass-border);
-  box-shadow: inset 0 0 12px rgba(37, 99, 235, 0.08), 0 2px 8px rgba(37, 99, 235, 0.12);
+  box-shadow: inset 0 2px 6px rgba(37, 99, 235, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .nav-link.active-sidebar-item .nav-badge {
   background: var(--primary);
   color: #FFFFFF;
   border-color: var(--primary);
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.35);
 }
 
 /* Sidebar User Footer */
@@ -405,8 +417,9 @@ html, body {
   font-size: 0.85rem;
   font-weight: 700;
   flex-shrink: 0;
-  border: 1px solid var(--glass-border);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--skeuo-chrome-rim);
 }
 
 .user-details {
@@ -433,19 +446,22 @@ html, body {
   font-size: 0.65rem;
   font-weight: 700;
   line-height: 1;
-  background: linear-gradient(90deg, #EFE189 0%, #EBC745 50%, #E7AD00 100%);
-  color: #5A3300;
+  background: linear-gradient(180deg, #FFF199 0%, #EBC745 50%, #D49D00 100%);
+  color: #4A2800;
   margin-top: 0.15rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
-/* Theme Toggle Button */
+/* Theme Toggle Button (Tactile Micro-Switch) */
 .theme-toggle-btn {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: var(--radius-sm);
   border: 1px solid var(--glass-border);
+  border-top: 1px solid var(--glass-border-specular);
   background: var(--secondary-glass);
+  box-shadow: var(--skeuo-convex-button);
   color: var(--muted-foreground);
   display: flex;
   align-items: center;
@@ -457,11 +473,15 @@ html, body {
 .theme-toggle-btn:hover {
   background: var(--secondary-glass-hover);
   color: var(--foreground);
-  border-color: var(--primary);
+}
+
+.theme-toggle-btn:active {
+  box-shadow: var(--skeuo-convex-button-pressed);
+  transform: translateY(1.5px);
 }
 
 /* ==========================================================================
-   2. Main Layout Container & Frosted Topbar
+   2. Main Layout Container & Topbar (Tactile Glass)
    ========================================================================== */
 .capitalio-main {
   flex: 1;
@@ -472,7 +492,6 @@ html, body {
   overflow: hidden;
 }
 
-/* Frosted Glass Topbar */
 .capitalio-topbar {
   display: flex;
   align-items: center;
@@ -483,7 +502,7 @@ html, body {
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border-bottom: 1px solid var(--topbar-border);
-  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.02), inset 0 -1px 0 rgba(0, 0, 0, 0.04);
   flex-shrink: 0;
   z-index: 40;
 }
@@ -543,7 +562,7 @@ html, body {
   flex-shrink: 0;
 }
 
-/* Glass Search Box */
+/* Debossed Search Input Well */
 .topbar-search {
   position: relative;
   display: flex;
@@ -559,6 +578,7 @@ html, body {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-sm);
+  box-shadow: var(--skeuo-concave-well);
   color: var(--foreground);
   font-size: 0.84rem;
   outline: none;
@@ -569,7 +589,7 @@ html, body {
   width: 260px;
   border-color: var(--primary);
   background: var(--glass-bg-elevated);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+  box-shadow: inset 0 2px 4px rgba(37, 99, 235, 0.15), 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
 .search-icon-svg {
@@ -589,7 +609,7 @@ html, body {
   cursor: pointer;
 }
 
-/* Glass Date Range Pill */
+/* Date Range Pill (Tactile Beveled Capsule) */
 .date-range-badge {
   display: flex;
   align-items: center;
@@ -600,18 +620,20 @@ html, body {
   backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-sm);
+  box-shadow: var(--skeuo-groove);
   font-size: 0.82rem;
   color: var(--muted-foreground);
 }
 
-/* Glass Period Switcher */
+/* Milled Period Switcher Tray with Tactile Sliders */
 .period-segmented-control {
   display: flex;
   background: var(--secondary-glass);
   backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-sm);
-  padding: 2px;
+  box-shadow: var(--skeuo-groove);
+  padding: 2.5px;
 }
 
 .period-btn {
@@ -626,14 +648,19 @@ html, body {
   transition: all var(--transition-fast);
 }
 
-.period-btn.active {
-  background: var(--primary);
-  color: #FFFFFF;
-  font-weight: 600;
-  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.3);
+.period-btn:hover {
+  color: var(--foreground);
 }
 
-/* Glass Buttons */
+.period-btn.active {
+  background: linear-gradient(180deg, #3B82F6 0%, #1D4ED8 100%);
+  color: #FFFFFF;
+  font-weight: 600;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Skeuomorphic Extruded Physical Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -651,27 +678,39 @@ html, body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%);
+  background: linear-gradient(180deg, #3B82F6 0%, #1D4ED8 100%);
   color: var(--primary-foreground);
   border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  box-shadow: var(--skeuo-convex-button);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #1E40AF 0%, #1D4ED8 100%);
-  transform: translateY(-1px);
+  background: linear-gradient(180deg, #2563EB 0%, #1E40AF 100%);
+}
+
+.btn-primary:active {
+  box-shadow: var(--skeuo-convex-button-pressed);
+  transform: translateY(2px);
 }
 
 .btn-secondary {
   background: var(--secondary-glass);
   color: var(--foreground);
   border: 1px solid var(--glass-border);
+  border-top: 1px solid var(--glass-border-specular);
+  box-shadow: var(--skeuo-convex-button);
   backdrop-filter: blur(12px);
 }
 
 .btn-secondary:hover {
   background: var(--secondary-glass-hover);
-  border-color: var(--foreground);
+}
+
+.btn-secondary:active {
+  box-shadow: var(--skeuo-convex-button-pressed);
+  transform: translateY(1.5px);
 }
 
 .btn-sm {
@@ -681,13 +720,20 @@ html, body {
 }
 
 .btn-danger {
-  background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+  background: linear-gradient(180deg, #F87171 0%, #DC2626 100%);
   color: var(--destructive-foreground);
-  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.35);
+}
+
+.btn-danger:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* ==========================================================================
-   3. Content Body & Universal Glass Card
+   3. Content Body & Skeuomorphic Glass Card
    ========================================================================== */
 .capitalio-content-scroll {
   flex: 1;
@@ -698,25 +744,25 @@ html, body {
   gap: 1.25rem;
 }
 
-/* Signature Glass Card */
+/* Physical Beveled Glass Card Slab */
 .dashboard-card {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--glass-border);
+  border-top: 1.5px solid var(--glass-border-specular);
   border-radius: var(--radius);
   padding: 1.35rem 1.45rem;
-  box-shadow: var(--glass-shadow);
+  box-shadow: var(--glass-shadow), var(--skeuo-card-bevel);
   color: var(--foreground);
   position: relative;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .dashboard-card:hover {
-  border-color: var(--glass-border-specular);
+  border-top-color: #FFFFFF;
 }
 
-/* Dot Grid Pattern for Glass Chart Containers */
 .dashboard-dot-grid {
   background-image: radial-gradient(
     circle,
@@ -726,7 +772,6 @@ html, body {
   background-size: 1.25rem 1.25rem;
 }
 
-/* Detail Headers & Glass Tags */
 .detail-header {
   display: flex;
   align-items: center;
@@ -747,36 +792,39 @@ html, body {
   letter-spacing: -0.01em;
 }
 
+/* Tactile Jewel-like Indicator Tags */
 .detail-tag {
   display: inline-flex;
   align-items: center;
-  padding: 0.2rem 0.65rem;
+  padding: 0.22rem 0.65rem;
   border-radius: var(--radius-sm);
   font-size: 0.75rem;
   font-weight: 600;
   backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .detail-tag-blue {
   color: var(--chart-1);
-  background: rgba(37, 99, 235, 0.12);
-  border: 1px solid rgba(37, 99, 235, 0.25);
+  background: rgba(37, 99, 235, 0.14);
+  border: 1px solid rgba(37, 99, 235, 0.3);
 }
 
 .detail-tag-green {
   color: var(--chart-4);
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  background: rgba(16, 185, 129, 0.14);
+  border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 .detail-tag-amber {
   color: var(--chart-3);
-  background: rgba(245, 158, 11, 0.12);
-  border: 1px solid rgba(245, 158, 11, 0.25);
+  background: rgba(245, 158, 11, 0.14);
+  border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 /* ==========================================================================
-   4. Top 4 Summary Cards Grid (Glass)
+   4. Top 4 Summary Cards Grid
    ========================================================================== */
 .summary-cards-grid {
   display: grid;
@@ -794,7 +842,7 @@ html, body {
 
 .summary-card:hover {
   transform: translateY(-2px);
-  box-shadow: var(--glass-shadow-hover);
+  box-shadow: var(--glass-shadow-hover), var(--skeuo-card-bevel);
 }
 
 .summary-card-top {
@@ -809,19 +857,20 @@ html, body {
   color: var(--muted-foreground);
 }
 
-/* Conic Metallic Icon Badge */
+/* Machined Metallic Conic Badge with Chrome Rim */
 .dashboard-icon-badge {
-  width: 2.15rem;
-  height: 2.15rem;
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: var(--radius-sm);
   background-image: var(--dashboard-icon-bg);
-  box-shadow: var(--dashboard-icon-shadow);
+  box-shadow: var(--skeuo-chrome-rim);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
   flex-shrink: 0;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.7);
 }
 
 .summary-card-body {
@@ -836,6 +885,7 @@ html, body {
   letter-spacing: -0.03em;
   color: var(--foreground);
   line-height: 1;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 .summary-card-subtext {
@@ -876,7 +926,7 @@ html, body {
   gap: 1rem;
 }
 
-/* Embedded Weekly Glass Calendar Strip */
+/* Tactile Calendar Keypads in Weekly Strip */
 .weekly-strip-embedded {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -892,7 +942,10 @@ html, body {
   background: var(--secondary-glass);
   backdrop-filter: blur(10px);
   border: 1px solid var(--glass-border);
+  border-top: 1.5px solid var(--glass-border-specular);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
   border-radius: var(--radius-sm);
+  box-shadow: var(--skeuo-convex-button);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
@@ -907,11 +960,14 @@ html, body {
   background: var(--primary-glass);
 }
 
+/* Selected Key (Physically Depressed & Illuminated) */
 .day-chip.is-selected {
-  background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%);
+  background: linear-gradient(180deg, #1D4ED8 0%, #2563EB 100%);
   color: #FFFFFF;
-  border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+  border-top: 2px solid rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 14px rgba(37, 99, 235, 0.5);
+  transform: translateY(1.5px);
 }
 
 .day-chip.is-selected .day-chip-name,
@@ -933,14 +989,15 @@ html, body {
 }
 
 .day-chip-dot {
-  width: 4px;
-  height: 4px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background-color: var(--chart-4);
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.8);
   margin-top: 0.2rem;
 }
 
-/* Main Area Chart Container (Glass) */
+/* Debossed Engraved Chart Well */
 .chart-container-wrap {
   position: relative;
   width: 100%;
@@ -948,7 +1005,8 @@ html, body {
   border-radius: var(--radius-sm);
   overflow: hidden;
   border: 1px solid var(--glass-border);
-  background: rgba(255, 255, 255, 0.08);
+  box-shadow: var(--skeuo-concave-well);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .area-chart-svg {
@@ -957,7 +1015,6 @@ html, body {
   display: block;
 }
 
-/* Velocity KPIs Strip */
 .velocity-kpi-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -994,7 +1051,7 @@ html, body {
   gap: 0.2rem;
 }
 
-/* Priority Allocation Donut Card */
+/* Donut Chart Panel */
 .donut-chart-wrap {
   position: relative;
   display: flex;
@@ -1007,6 +1064,7 @@ html, body {
   width: 160px;
   height: 160px;
   transform: rotate(-90deg);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
 }
 
 .donut-center-metric {
@@ -1042,10 +1100,11 @@ html, body {
   align-items: center;
   justify-content: space-between;
   font-size: 0.82rem;
-  padding: 0.35rem 0.5rem;
+  padding: 0.4rem 0.65rem;
   border-radius: var(--radius-sm);
   background: var(--secondary-glass);
   border: 1px solid var(--glass-border-subtle);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.03);
 }
 
 .allocation-row-left {
@@ -1055,10 +1114,11 @@ html, body {
 }
 
 .color-marker {
-  width: 0.65rem;
-  height: 0.65rem;
-  border-radius: 2px;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 3px;
   flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .color-marker-high { background-color: var(--chart-5); }
@@ -1072,7 +1132,7 @@ html, body {
 }
 
 /* ==========================================================================
-   6. Bottom Row: Glass Holdings Table & Goals / Insights
+   6. Bottom Row: Tasks Table & Goals (Tactile Physical Controls)
    ========================================================================== */
 .bottom-grid {
   display: grid;
@@ -1080,7 +1140,6 @@ html, body {
   gap: 1rem;
 }
 
-/* Table Toolbar */
 .table-toolbar {
   display: flex;
   align-items: center;
@@ -1089,13 +1148,15 @@ html, body {
   margin-bottom: 1rem;
 }
 
+/* Debossed Filter Milled Track */
 .filter-segments {
   display: flex;
   background: var(--secondary-glass);
   backdrop-filter: blur(10px);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-sm);
-  padding: 2px;
+  box-shadow: var(--skeuo-groove);
+  padding: 2.5px;
 }
 
 .filter-seg-btn {
@@ -1110,14 +1171,18 @@ html, body {
   transition: all var(--transition-fast);
 }
 
-.filter-seg-btn.active {
-  background: var(--primary);
-  color: #FFFFFF;
-  font-weight: 600;
-  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.3);
+.filter-seg-btn:hover {
+  color: var(--foreground);
 }
 
-/* Day Filter Alert Banner */
+.filter-seg-btn.active {
+  background: linear-gradient(180deg, #3B82F6 0%, #1D4ED8 100%);
+  color: #FFFFFF;
+  font-weight: 600;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
 .day-filter-alert {
   display: flex;
   align-items: center;
@@ -1129,6 +1194,7 @@ html, body {
   margin-bottom: 0.85rem;
   font-size: 0.82rem;
   color: var(--primary);
+  box-shadow: inset 0 1px 2px rgba(37, 99, 235, 0.1);
   backdrop-filter: blur(10px);
 }
 
@@ -1141,7 +1207,7 @@ html, body {
   line-height: 1;
 }
 
-/* Glass Data Table */
+/* Holdings Table */
 .tasks-data-table {
   width: 100%;
   border-collapse: separate;
@@ -1163,6 +1229,7 @@ html, body {
   text-align: left;
   border-top: 1px solid var(--glass-border);
   border-bottom: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .table-head-row th:first-child {
@@ -1207,17 +1274,18 @@ html, body {
 }
 
 .task-type-icon {
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: var(--radius-sm);
   background: var(--secondary-glass);
   border: 1px solid var(--glass-border);
+  border-top: 1px solid var(--glass-border-specular);
+  box-shadow: var(--skeuo-convex-button);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--primary);
   flex-shrink: 0;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4);
 }
 
 .task-title-group {
@@ -1250,34 +1318,35 @@ html, body {
   max-width: 280px;
 }
 
-/* Glass Priority Badges */
+/* Tactile 3D Priority Pills */
 .priority-pill {
   display: inline-flex;
   align-items: center;
-  padding: 0.2rem 0.55rem;
+  padding: 0.22rem 0.6rem;
   border-radius: var(--radius-full);
   font-size: 0.72rem;
   font-weight: 600;
   line-height: 1;
-  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
 .priority-high {
-  background: rgba(239, 68, 68, 0.15);
+  background: linear-gradient(180deg, rgba(239, 68, 68, 0.25) 0%, rgba(220, 38, 38, 0.18) 100%);
   color: var(--chart-5);
-  border: 1px solid rgba(239, 68, 68, 0.3);
+  border: 1px solid rgba(239, 68, 68, 0.4);
 }
 
 .priority-medium {
-  background: rgba(245, 158, 11, 0.15);
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.25) 0%, rgba(217, 119, 6, 0.18) 100%);
   color: var(--chart-3);
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  border: 1px solid rgba(245, 158, 11, 0.4);
 }
 
 .priority-low {
-  background: rgba(139, 92, 246, 0.15);
+  background: linear-gradient(180deg, rgba(139, 92, 246, 0.25) 0%, rgba(124, 58, 237, 0.18) 100%);
   color: var(--chart-2);
-  border: 1px solid rgba(139, 92, 246, 0.3);
+  border: 1px solid rgba(139, 92, 246, 0.4);
 }
 
 .date-pill {
@@ -1288,15 +1357,17 @@ html, body {
 .date-pill.overdue {
   color: var(--destructive);
   font-weight: 600;
+  text-shadow: 0 0 8px rgba(239, 68, 68, 0.3);
 }
 
-/* Custom Glass Checkbox */
+/* Skeuomorphic Micro-Switch Checkbox with LED Glow */
 .task-check-box {
-  width: 1.3rem;
-  height: 1.3rem;
+  width: 1.35rem;
+  height: 1.35rem;
   border-radius: 5px;
   border: 1.5px solid var(--glass-border);
   background: var(--secondary-glass);
+  box-shadow: var(--skeuo-concave-well);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1309,11 +1380,16 @@ html, body {
   background: var(--primary-glass);
 }
 
+.task-check-box:active {
+  transform: scale(0.92);
+}
+
 .task-row.is-completed .task-check-box {
-  background: var(--chart-4);
-  border-color: var(--chart-4);
+  background: linear-gradient(180deg, #34D399 0%, #059669 100%);
+  border-color: #059669;
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
   color: #FFFFFF;
-  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.4);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.7), inset 0 1px 2px rgba(255, 255, 255, 0.7), 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .row-actions-cell {
@@ -1326,7 +1402,7 @@ html, body {
   border: none;
   color: var(--muted-foreground);
   cursor: pointer;
-  padding: 0.35rem;
+  padding: 0.38rem;
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
 }
@@ -1334,6 +1410,7 @@ html, body {
 .action-btn-icon:hover {
   color: var(--foreground);
   background: var(--secondary-glass);
+  box-shadow: var(--skeuo-convex-button);
 }
 
 .action-btn-icon.delete:hover {
@@ -1352,7 +1429,7 @@ html, body {
 }
 
 /* ==========================================================================
-   7. Goals & Smart Insights Column (Glass)
+   7. Goals & Smart Insights Column
    ========================================================================== */
 .insights-card {
   display: flex;
@@ -1368,13 +1445,15 @@ html, body {
   border-bottom: 1px solid var(--glass-border);
 }
 
+/* Debossed Fluid Progress Track */
 .goal-progress-track {
   width: 100%;
-  height: 7px;
+  height: 8px;
   background: var(--secondary-glass);
   border-radius: var(--radius-full);
   overflow: hidden;
-  border: 1px solid var(--glass-border-subtle);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--skeuo-concave-well);
 }
 
 .goal-progress-fill {
@@ -1382,7 +1461,7 @@ html, body {
   background: linear-gradient(90deg, #2563EB 0%, #10B981 100%);
   border-radius: var(--radius-full);
   transition: width 0.4s ease;
-  box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .add-goal-inline-form {
@@ -1398,6 +1477,7 @@ html, body {
   backdrop-filter: blur(10px);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-sm);
+  box-shadow: var(--skeuo-concave-well);
   color: var(--foreground);
   font-size: 0.82rem;
   outline: none;
@@ -1425,6 +1505,8 @@ html, body {
   background: var(--secondary-glass);
   backdrop-filter: blur(10px);
   border: 1px solid var(--glass-border-subtle);
+  border-top: 1px solid var(--glass-border-specular);
+  box-shadow: var(--skeuo-convex-button);
   transition: all var(--transition-fast);
 }
 
@@ -1451,11 +1533,12 @@ html, body {
 }
 
 .goal-checkbox {
-  width: 1.05rem;
-  height: 1.05rem;
+  width: 1.15rem;
+  height: 1.15rem;
   border-radius: 4px;
   border: 1.5px solid var(--glass-border);
   background: var(--secondary-glass);
+  box-shadow: var(--skeuo-concave-well);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1463,9 +1546,11 @@ html, body {
 }
 
 .goal-row.is-done .goal-checkbox {
-  background: var(--chart-4);
-  border-color: var(--chart-4);
+  background: linear-gradient(180deg, #34D399 0%, #059669 100%);
+  border-color: #059669;
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
   color: #FFFFFF;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.7);
 }
 
 .goal-text-content {
@@ -1500,25 +1585,28 @@ html, body {
 .insight-item {
   display: flex;
   gap: 0.75rem;
-  padding: 0.65rem 0.75rem;
+  padding: 0.75rem 0.85rem;
   border-radius: var(--radius-sm);
   background: var(--secondary-glass);
   backdrop-filter: blur(10px);
   border: 1px solid var(--glass-border-subtle);
+  border-top: 1px solid var(--glass-border-specular);
+  box-shadow: var(--skeuo-convex-button);
 }
 
 .insight-icon-box {
-  width: 2.15rem;
-  height: 2.15rem;
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: var(--radius-sm);
   background-image: var(--dashboard-icon-bg);
-  box-shadow: var(--dashboard-icon-shadow);
+  box-shadow: var(--skeuo-chrome-rim);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
   flex-shrink: 0;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.7);
 }
 
 .insight-body {
@@ -1541,14 +1629,14 @@ html, body {
 }
 
 /* ==========================================================================
-   8. Frosted Glass Modals
+   8. Skeuomorphic Frosted Glass Modals
    ========================================================================== */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.58);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1568,11 +1656,13 @@ html, body {
   width: 100%;
   max-width: 500px;
   background: var(--glass-bg-elevated);
-  backdrop-filter: blur(32px) saturate(200%);
-  -webkit-backdrop-filter: blur(32px) saturate(200%);
-  border: 1px solid var(--glass-border-specular);
+  backdrop-filter: blur(34px) saturate(200%);
+  -webkit-backdrop-filter: blur(34px) saturate(200%);
+  border: 1px solid var(--glass-border);
+  border-top: 2px solid var(--glass-border-specular);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   border-radius: var(--radius-lg);
-  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.4), var(--skeuo-card-bevel);
   transform: scale(0.95) translateY(10px);
   transition: transform var(--transition-normal);
   overflow: hidden;
@@ -1588,6 +1678,7 @@ html, body {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .modal-title-text {
@@ -1631,6 +1722,7 @@ html, body {
   backdrop-filter: blur(10px);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-sm);
+  box-shadow: var(--skeuo-concave-well);
   color: var(--foreground);
   font-size: 0.88rem;
   font-family: inherit;
@@ -1641,7 +1733,7 @@ html, body {
 .form-textarea-control:focus {
   border-color: var(--primary);
   background: var(--glass-bg-elevated);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  box-shadow: inset 0 2px 4px rgba(37, 99, 235, 0.15), 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
 .form-split-row {
@@ -1662,6 +1754,7 @@ html, body {
   pointer-events: none;
 }
 
+/* Tactile Push-Button Rockers for Priority */
 .priority-chip-pill {
   display: flex;
   align-items: center;
@@ -1671,28 +1764,40 @@ html, body {
   font-weight: 600;
   border-radius: var(--radius-sm);
   border: 1px solid var(--glass-border);
+  border-top: 1px solid var(--glass-border-specular);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
   background: var(--secondary-glass);
+  box-shadow: var(--skeuo-convex-button);
   color: var(--muted-foreground);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .priority-chip-opt input:checked + .chip-low {
-  background: rgba(139, 92, 246, 0.18);
+  background: linear-gradient(180deg, rgba(139, 92, 246, 0.3) 0%, rgba(124, 58, 237, 0.2) 100%);
   border-color: var(--chart-2);
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
   color: var(--chart-2);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.25), 0 0 8px rgba(139, 92, 246, 0.4);
+  transform: translateY(1.5px);
 }
 
 .priority-chip-opt input:checked + .chip-medium {
-  background: rgba(245, 158, 11, 0.18);
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.3) 0%, rgba(217, 119, 6, 0.2) 100%);
   border-color: var(--chart-3);
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
   color: var(--chart-3);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.25), 0 0 8px rgba(245, 158, 11, 0.4);
+  transform: translateY(1.5px);
 }
 
 .priority-chip-opt input:checked + .chip-high {
-  background: rgba(239, 68, 68, 0.18);
+  background: linear-gradient(180deg, rgba(239, 68, 68, 0.3) 0%, rgba(220, 38, 38, 0.2) 100%);
   border-color: var(--chart-5);
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
   color: var(--chart-5);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.25), 0 0 8px rgba(239, 68, 68, 0.4);
+  transform: translateY(1.5px);
 }
 
 .modal-actions-footer {
@@ -1708,16 +1813,17 @@ html, body {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(15, 23, 42, 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.4);
   padding: 0.65rem 1.15rem;
   border-radius: var(--radius-full);
   font-size: 0.84rem;
   font-weight: 500;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.3);
   z-index: 150;
   display: flex;
   align-items: center;
