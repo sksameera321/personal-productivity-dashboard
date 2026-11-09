@@ -1,9 +1,9 @@
-# Capitalio FocusFlow — Personal Productivity Dashboard
+# FocusFlow OS — Personal Productivity Dashboard
 
 > **PROJECT ASSIGNMENT 01**  
 > **Developer:** Sameera Bhanu  
 > **Academic Affiliation:** B.Tech in Computer Science & Engineering (First Year), [Shri Vishnu Engineering College for Women (SVECW)](https://www.linkedin.com/school/15124808/), Bhimavaram  
-> **Design Reference:** [Capitalio Wealth Management Dashboard (Watermelon UI)](https://ui.watermelon.sh/dashboard/capitalio-dashboard)  
+> **Design Architecture:** Frosted Glassmorphism & High-Density Productivity OS  
 > **Technologies:** Semantic HTML5, Modern CSS3 (Grid & Flexbox), Vanilla JavaScript (ES6+)  
 > **Storage:** Browser `localStorage`  
 > **Live Deployment:** [https://sksameera321.github.io/personal-productivity-dashboard/](https://sksameera321.github.io/personal-productivity-dashboard/)  
@@ -13,15 +13,15 @@
 
 ## 1. Project Objective & Vision
 
-**Capitalio FocusFlow** is a modern, high-performance personal productivity and task management dashboard designed for university students, engineers, and researchers to orchestrate their academic agenda, daily habits, and productivity velocity.
+**FocusFlow OS** is a premier, high-performance personal productivity and task management operating system designed for university students, engineers, and researchers to orchestrate their academic agenda, daily habits, and productivity velocity.
 
-Inspired by the **Capitalio Wealth Management Dashboard** design language on [Watermelon UI](https://ui.watermelon.sh/dashboard/capitalio-dashboard), this application balances data density, sleek typography, micro-interactions, and visual elegance.
+Featuring an ultra-modern **Frosted Glassmorphism Design System**, the application balances data density, sleek typography, smooth micro-interactions, and visual elegance.
 
 The entire system was developed from the ground up using **pure semantic HTML5, modern CSS3, and modular Vanilla JavaScript**, with zero external framework dependencies (no React, Next.js, Bootstrap, or Tailwind CSS).
 
 ---
 
-## 2. Capitalio Glassmorphism Design System
+## 2. FocusFlow OS Glassmorphism Design System
 
 ### A. Frosted Glass Architecture
 - **Ambient Glowing Light Mesh**: Floating organic radiant light orbs (`.ambient-mesh-canvas`) behind the interface that provide luminous color gradients for the frosted glass to refract and blur.
@@ -160,7 +160,7 @@ Open your browser to:
 
 ## 7. Submission Checklist
 
-- [x] **Capitalio UI Redesign**: Accurately styled after Capitalio Wealth Management Dashboard on Watermelon UI.
+- [x] **FocusFlow OS UI Architecture**: High-density productivity workspace with full Glassmorphism design system.
 - [x] **Dark & Light Mode**: Complete dual theme support with instant toggle and local persistence.
 - [x] **Pure Vanilla Stack**: Semantic HTML5, CSS3 Grid/Flexbox, Vanilla JavaScript ES6+, LocalStorage. Zero framework bloat.
 - [x] **Data Persistence**: Changes persist across reloads; deleted tasks never reappear.
@@ -170,4 +170,4 @@ Open your browser to:
 
 ---
 
-<sub>Capitalio FocusFlow &bull; Engineered with craftsmanship by **Sameera Bhanu** &bull; &copy; 2026</sub>
+<sub>FocusFlow OS &bull; Engineered with craftsmanship by **Sameera Bhanu** &bull; &copy; 2026</sub>
