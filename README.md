@@ -1,8 +1,9 @@
-# FocusFlow — Personal Productivity Dashboard
+# Capitalio FocusFlow — Personal Productivity Dashboard
 
 > **PROJECT ASSIGNMENT 01**  
 > **Developer:** Sameera Bhanu  
 > **Academic Affiliation:** B.Tech in Computer Science & Engineering (First Year), [Shri Vishnu Engineering College for Women (SVECW)](https://www.linkedin.com/school/15124808/), Bhimavaram  
+> **Design Reference:** [Capitalio Wealth Management Dashboard (Watermelon UI)](https://ui.watermelon.sh/dashboard/capitalio-dashboard)  
 > **Technologies:** Semantic HTML5, Modern CSS3 (Grid & Flexbox), Vanilla JavaScript (ES6+)  
 > **Storage:** Browser `localStorage`  
 > **Live Deployment:** [https://sksameera321.github.io/personal-productivity-dashboard/](https://sksameera321.github.io/personal-productivity-dashboard/)  
@@ -12,147 +13,140 @@
 
 ## 1. Project Objective & Vision
 
-**FocusFlow** is a modern, responsive personal productivity application engineered specifically for university students and engineers to organize their daily academic work, manage high-priority tasks, set personal daily goals, and observe real-time productivity metrics.
+**Capitalio FocusFlow** is a modern, high-performance personal productivity and task management dashboard designed for university students, engineers, and researchers to orchestrate their academic agenda, daily habits, and productivity velocity.
 
-Rather than assembling a static webpage or relying on heavyweight frontend frameworks, this project was developed from the ground up using **pure semantic HTML5, modern CSS3, and modular Vanilla JavaScript**. The primary engineering objective is mastering core DOM manipulation, event-driven state orchestration, and client-side data persistence before progressing to React.
+Inspired by the **Capitalio Wealth Management Dashboard** design language on [Watermelon UI](https://ui.watermelon.sh/dashboard/capitalio-dashboard), this application balances data density, sleek typography, micro-interactions, and visual elegance.
+
+The entire system was developed from the ground up using **pure semantic HTML5, modern CSS3, and modular Vanilla JavaScript**, with zero external framework dependencies (no React, Next.js, Bootstrap, or Tailwind CSS).
 
 ---
 
-## 2. Design System & Apple-Inspired Aesthetic
+## 2. Capitalio Design System & Visual Architecture
 
-The visual architecture is guided by **Apple-like simplicity, quiet sophistication, and functional minimalism**:
-
-- **Neutral Porcelain Palette**: Subtle off-white canvas (`#FBFBFD`) paired with elevated pure white cards (`#FFFFFF`) and hairline dividers (`#E5E5EA`).
-- **Typography & Whitespace**: System font stack (`-apple-system, "SF Pro Text", "Inter"`) with generous margins (24px–32px) and calibrated leading to eliminate cognitive noise.
-- **Intentional Color Accents**:
-  - **Electric Blue (`#0071E3`)**: Primary actions, today's schedule indicator, and progress ring.
-  - **Apple Green (`#34C759`)**: Completed items and success states.
-  - **Amber (`#FF9F0A`)**: Medium priority focus.
-  - **Coral Red (`#FF3B30`)**: High priority tasks and overdue alerts.
-- **Restraint Over Clutter**: No unnecessary decorative cards, no loud gradients, and no gimmicky animations. Micro-interactions are smooth, responsive, and tactile (44px touch targets, custom circular checkboxes, and backdrop-blur modals).
+### A. Color Palette & Token Hierarchy
+- **Dual Light & Dark Theme**: Full dynamic theme switching with instant persistence in `localStorage`.
+  - **Light Mode**: High-contrast white canvas (`#FFFFFF`), neutral elevated card surfaces (`#FFFFFF`), subtle border dividers (`#E5E7EB`), and dark text (`#141416`).
+  - **Dark Mode**: Deep obsidian background (`#151517`), elevated card surfaces (`#151517`), charcoal borders (`#26262B`), and crisp white typography (`#FFFFFF`).
+- **Signature Accents (Capitalio Spectrum)**:
+  - **Primary Electric Blue (`#2563EB`)**: Brand logo, primary CTA buttons, and active tabs.
+  - **Chart 4 Emerald (`#00DA92`)**: Completed items, positive velocity trends, and goal progress.
+  - **Chart 3 Amber (`#FF7A00`)**: Medium priority focus.
+  - **Chart 5 Crimson (`#E10B05`)**: High priority alerts and overdue indicators.
+  - **Chart 2 Purple (`#7466F6`)**: Low priority allocations.
+- **Conic Metallic Icon Badges (`--dashboard-icon-bg`)**: Signature brushed metallic gradient icons paired with subtle drop shadows.
+- **Gold Premium Badge**: `linear-gradient(90deg, #EFE189 0%, #EBC745 50%, #E7AD00 100%)` representing academic status.
 
 ---
 
 ## 3. Core Feature Specifications
 
-### A. Dashboard Overview
-- **Contextual Welcome Message**: Dynamically shifts between *"Good morning"*, *"Good afternoon"*, and *"Good evening, Sameera"* based on local clock hours.
-- **Current Calendar Date**: Real-time formatted date string (e.g. *Monday, November 9, 2026*).
-- **Productivity Summary Headline**: Context-aware summary alerting the user to today's active task load.
-- **Live Metric Cards**:
-  - **Total Tasks**: Aggregate task count.
-  - **Completed Tasks**: Tasks marked done.
-  - **Pending Tasks**: Active tasks requiring attention.
-  - **Daily Progress Gauge**: Interactive SVG circular progress ring animating from `0%` to `100%`.
+### A. Left Navigation Sidebar
+- **Brand Identity**: Capitalio geometric diamond logo with linear gradient glow (`#1D4ED8` to `#3B82F6`) and edition tagline.
+- **Navigation Groups**: Quick navigation across **Overview**, **Tasks Feed** (with live pending count badge), **Schedule** (7-day badge), **Daily Goals** (fraction badge), and **Velocity Analytics**.
+- **User Profile Footer**: Sameera Bhanu avatar with golden **Premium • SVECW** badge and integrated dark/light mode toggle.
 
-### B. Task Management
-- **Task Creation**: Modal dialog capturing Title (required), Context/Description (optional), Due Date, and Priority.
-- **Inline Editing**: Full edit capability for existing tasks with pre-populated form fields.
-- **Safe Task Deletion**: Custom modal confirmation dialog to prevent accidental data loss.
-- **Status Toggle**: Custom circular checkbox marking tasks completed/pending with instant visual feedback.
-- **Priority Classification**: Color-coded badges for **High**, **Medium**, and **Low** priority.
-- **Multi-Criteria Filtering**: Instant segment switching between **All**, **Pending**, and **Completed**.
-- **Real-Time Title Search**: Non-blocking instantaneous filtering as the user types, with a single-click clear button.
+### B. Topbar Control Hub
+- **Dynamic Contextual Greeting**: Shifts between *"Good morning"*, *"Good afternoon"*, and *"Good evening, Sameera"* based on local clock hours.
+- **Real-Time Timestamp**: Live clock submeta string displaying update time.
+- **Live Title Search**: Non-blocking client-side search bar with instant `&times;` clear button.
+- **Active Date Range Indicator**: Calendar pill showing the current 7-day schedule window (`Nov 9 – Nov 15`).
+- **Period Filter**: Segmented selector for `1W`, `1M`, and `ALL`.
+- **Theme Toggle**: Fast one-click switch between Capitalio Light and Dark themes.
+- **Primary CTA**: `+ New Task` button triggering the task modal dialog.
 
-### C. Daily Goals & Habit Tracker
-- **Personal Goal Creation**: Inline quick-add form for daily habits and study targets.
-- **Progress Tracking**: Real-time completion fraction (e.g. `2/3 Goals`) and animated progress bar.
-- **Interactive Checkboxes**: Click or keyboard (`Enter`/`Space`) toggles goal completion.
-- **Goal Deletion**: Instant deletion with automatic recalculation of daily progress.
+### C. Top 4 Capitalio Summary Cards Grid
+1. **Total Workload**: Metric count, metallic folder icon, trend indicator (`↑ 18.2% vs last week`), and SVG sparkline area chart.
+2. **Completed Tasks**: Metric count, metallic check icon, completion percentage, and SVG sparkline.
+3. **Pending Focus**: Metric count, metallic clock icon, high-priority count pill, and SVG sparkline.
+4. **Daily Progress**: Completion percentage, metallic progress icon, goal ratio, and animated progress meter.
 
-### D. Interactive Weekly Schedule Strip
-- **7-Day Rolling Calendar**: Automatically calculates Monday-to-Sunday for the active week.
-- **Today's Highlight**: Distinct visual indicator marking the current date.
-- **Task Activity Dots**: Visual dot indicators under dates showing whether tasks are scheduled for that day.
-- **Day-Specific Filtering**: Clicking any day filters the main task list to display only tasks due on that selected date, accompanied by a clean dismissible filter banner and *"Show All Days"* action.
+### D. Middle Analytics Row (2-Column Grid)
+- **Weekly Task Velocity & Schedule (2 Columns)**:
+  - **Embedded 7-Day Calendar Strip**: Rolling Monday-to-Sunday strip showing weekday names and day numbers with current day highlight (`is-today`). Clicking any day filters tasks specifically for that date.
+  - **Dot Grid Area Chart**: Hardware-accelerated SVG Area Chart rendered on top of a subtle radial dot grid (`.dashboard-dot-grid`). Generates smooth cubic bezier curves and gradient fills based on real task distribution.
+  - **4 Bottom Velocity KPIs**: Completed Rate, Deep Work Hours, Active Streak, and Goal Ratio.
+- **Priority Allocation Donut Panel (1 Column)**:
+  - **Interactive SVG Donut Chart**: Colored arc segments for High, Medium, Low, and Completed tasks with dynamic radius ($r = 38\text{px}$) and circumference ($C = 238.76\text{px}$).
+  - **Center Metric**: Total active tasks count.
+  - **Color Legend**: Colored square markers, exact counts, and percentage shares.
 
-### E. Productivity Statistics & Insights
-- **Completion Rate**: Calculated percentage dynamically updating the circular ring.
-- **Priority Distribution Matrix**: Real-time counter of pending High, Medium, and Low priority items.
-- **Smart Motivational Insights**: Contextual encouragement adapting whether the user is facing heavy high-priority items or has achieved a clean streak.
+### E. Bottom Management Row (2-Column Grid)
+- **Tasks & Assignments Holdings Table (2 Columns)**:
+  - Header with filter segment tabs (**All**, **Pending**, **Completed**).
+  - Clean table layout with columns: `#`, `Task & Subject` (with icon avatar), `Due Date`, `Priority Pill`, `Custom Checkbox`, and `Action Buttons` (Edit and Delete).
+  - Overdue date detection flagging overdue tasks in crimson red.
+  - Empty state when no tasks match the filter.
+- **Daily Goals & Smart Insights (1 Column)**:
+  - **Daily Habit Tracker**: Inline add form, dynamic progress bar, completion checkboxes, and individual delete buttons.
+  - **Smart Insights**: Context-aware recommendations adapting dynamically based on workload and streaks.
 
 ### F. Data Persistence (Browser LocalStorage)
-- **Automatic Auto-Save**: Every task creation, edit, status toggle, goal addition, and deletion persists immediately.
-- **Zero Data Loss on Refresh**: All data reloads reliably across browser reloads or restarts.
-- **First-Run Seed Data**: Intelligently seeds realistic academic sample tasks on first launch so the interface is never an intimidating blank screen.
+- Automatic auto-save on every state modification.
+- Changes survive page reloads and browser restarts.
+- Initial seed data loaded on first visit, with an initialization flag (`ppd_initialized_v1`) ensuring **deleted tasks never reappear after refresh**.
 
 ---
 
-## 4. Application Architecture & Modular Design
+## 4. Application Architecture
 
 ```text
 personal-productivity-dashboard/
-├── index.html          # Semantic HTML5 markup, ARIA accessibility, modals
+├── index.html          # Semantic HTML5 markup, Capitalio layout, modals
 ├── css/
-│   └── style.css       # Apple-inspired CSS custom properties, grid & flexbox, responsive design
+│   └── style.css       # Capitalio tokens, dark/light themes, dot grids, table styling
 ├── js/
-│   ├── storage.js      # LocalStorage API wrapper, safe JSON parsing, sample data seeder
-│   ├── tasks.js        # Task entity state, CRUD methods, priority sorting, filtering logic
-│   ├── goals.js        # Daily goals model, completion statistics, persistence
-│   └── app.js          # Controller orchestrating UI events, calendar strip, search, modals
-├── assets/             # Vector icons & branding graphics
+│   ├── storage.js      # LocalStorage wrapper, initialization flags, data seeder
+│   ├── tasks.js        # Task entity state, CRUD operations, priority weighting, filters
+│   ├── goals.js        # Daily goals model, completion percentage, persistence
+│   └── app.js          # Main controller: SVG area chart, donut chart, schedule, modals, theme
+├── assets/             # Branding icons & SVG vectors
 ├── server.js           # Lightweight zero-dependency development server (port 3001)
-├── README.md           # Technical documentation and assignment report
+├── README.md           # Technical documentation and assignment submission report
+├── .nojekyll           # Disable Jekyll on GitHub Pages
 └── .gitignore          # Version control hygiene
 ```
 
-### Data Flow Diagram
+### Data Flow Architecture
 
 ```mermaid
 flowchart TD
-    User["User Interaction (Click / Input / Keydown)"] --> Controller["Controller (app.js)"]
-    Controller --> TaskModule["Task Manager (tasks.js)"]
-    Controller --> GoalModule["Goal Manager (goals.js)"]
-    TaskModule --> StorageModule["Storage Layer (storage.js)"]
-    GoalModule --> StorageModule
-    StorageModule <--> LocalStorage[("Browser LocalStorage")]
-    TaskModule --> UI["DOM Rerender (Tasks, Metrics, Ring, Calendar)"]
-    GoalModule --> UI
+    User["User Interaction (Click / Input / Period / Theme)"] --> App["Application Controller (app.js)"]
+    App --> TaskEngine["Task Engine (tasks.js)"]
+    App --> GoalEngine["Goal Engine (goals.js)"]
+    TaskEngine --> StorageLayer["Storage Layer (storage.js)"]
+    GoalEngine --> StorageLayer
+    StorageLayer <--> LocalStorage[("Browser LocalStorage")]
+    App --> AreaChart["SVG Area Velocity Chart"]
+    App --> DonutChart["SVG Priority Donut Chart"]
+    App --> TableView["Tasks Holdings Table"]
+    App --> Theme["Theme Engine (Dark / Light)"]
 ```
 
 ---
 
 ## 5. Engineering Challenges & Solutions
 
-### Challenge 1: Smooth SVG Circular Progress Indicator Geometry
-- **Problem**: Generating a smooth circular progress indicator in pure SVG without external charting libraries requires calculating stroke circumference and dynamic offsets. Without proper bounds checking, empty task lists caused `NaN%` or negative dash offsets.
-- **Solution**: Engineered a circle element with radius `r = 23px`. The circumference was calculated via KaTeX math: $C = 2 \times \pi \times 23 \approx 144.51\text{px}$. The dynamic offset was derived using:
-  $$\text{Offset} = C - \left(\frac{\text{Percentage}}{100} \times C\right)$$
-  Added protective logic so when total tasks equal 0, percentage defaults safely to 0% and transitions with `stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1)`.
+### Challenge 1: Smooth SVG Cubic Bezier Area Chart with Dot Grid
+- **Problem**: Generating a continuous, smooth area chart in pure SVG without libraries requires calculating cubic bezier control points across arbitrary task numbers.
+- **Solution**: Developed a cubic bezier interpolation algorithm in `app.js` that loops through the 7-day schedule points, placing control points at $x_c = \frac{x_1 + x_2}{2}$ to achieve a smooth curve. Created an enclosed path connecting the curve to the bottom edge, filled with an SVG linear gradient with variable opacity (`32%` to `0%`).
 
-### Challenge 2: Dynamic Weekly Calendar Strip & Month Boundary Alignment
-- **Problem**: University students often work across week and month boundaries (e.g. week spanning Oct 29 to Nov 4). Hardcoded dates break immediately.
-- **Solution**: Developed an algorithm in `app.js` that determines the current date, calculates the day of the week, shifts backward to Monday (`distanceToMonday = (dayOfWeek + 6) % 7`), and loops 7 days forward creating real `Date` instances. Each date is cross-referenced with `TaskManager.getByDate(dateString)` to count tasks and render active indicator dots.
+### Challenge 2: Dynamic Multi-Segment SVG Donut Chart
+- **Problem**: Standard CSS border radius cannot create proportional multi-segment donut charts with individual color segments and stroke offsets.
+- **Solution**: Engineered an SVG donut generator using circle elements with radius $r = 38\text{px}$ and circumference $C = 2 \times \pi \times 38 \approx 238.76\text{px}$. Each priority tier (High, Med, Low, Done) calculates its segment length $\text{len} = \frac{\%}{100} \times C$ and is positioned via dynamic negative `stroke-dashoffset`, rotating the root SVG by $-90^\circ$ for top-aligned starts.
 
-### Challenge 3: Resilient LocalStorage Serialization & Safe Input Sanitization
-- **Problem**: User input containing special characters (`<`, `>`, `&`, `"`) could break DOM rendering or trigger XSS vulnerabilities when updating titles. Additionally, corrupt or cleared `localStorage` could throw `JSON.parse` exceptions.
-- **Solution**: Built a centralized `Storage.get(key, fallback)` wrapper with `try...catch` blocks returning safe default arrays. In `app.js`, implemented an `escapeHTML(str)` utility using browser `textContent` encoding before any dynamic innerHTML injection, guaranteeing security and data integrity.
+### Challenge 3: Seamless Dual Theme System with Zero Flash
+- **Problem**: Implementing Dark/Light mode without CSS libraries often results in white flash on reload, unreadable text contrast, or desynchronized icon colors.
+- **Solution**: Centralized all design tokens under `:root` and `[data-theme="dark"]` using semantic variables (`--background`, `--card`, `--foreground`, `--border`, `--muted`). Added an immediate theme initialization step at the very beginning of DOM execution that reads `ppd_theme` from `localStorage` and applies `data-theme` to `document.documentElement` before layout rendering.
 
 ---
 
-## 6. Seven-Day Academic Development Plan
-
-| Day | Milestone | Key Deliverables Completed |
-|:---:|:---|:---|
-| **Day 1** | Requirements & Wireframing | Synthesized assignment objectives, studied Apple human interface guidelines, and planned 2-column layout. |
-| **Day 2** | Semantic HTML5 Foundation | Built `index.html` structure: top app bar, hero, metrics cards, weekly strip, task feed, and accessible modals. |
-| **Day 3** | CSS3 Styling & Responsiveness | Engineered `style.css` design system: typography, custom rounded checkboxes, priority chips, mobile breakpoints. |
-| **Day 4** | Task Management Engine | Implemented `tasks.js`: task model, CRUD operations, priority sorting, status toggling, and search filtering. |
-| **Day 5** | Daily Goals & Weekly Schedule | Implemented `goals.js` and `app.js` calendar generator with dynamic day selection and circular SVG meter. |
-| **Day 6** | LocalStorage Persistence & Testing | Built `storage.js`, tested edge cases (empty states, overdue dates, quota limits), and refined micro-interactions. |
-| **Day 7** | Deployment & Documentation | Created `server.js`, authored comprehensive `README.md`, committed to GitHub, and launched live GitHub Pages. |
-
----
-
-## 7. Local Development & Testing Instructions
-
-To run and inspect the project locally on your machine:
+## 6. Local Development & Testing Instructions
 
 ```bash
-# 1. Navigate to the project directory
+# 1. Navigate to project root
 cd E:\sameera-projects\personal-productivity-dashboard
 
-# 2. Start the lightweight zero-dependency server
+# 2. Start local server
 node server.js
 ```
 
@@ -161,16 +155,16 @@ Open your browser to:
 
 ---
 
-## 8. Final Submission Checklist
+## 7. Submission Checklist
 
-- [x] **Semantic HTML5**: Validated document structure with accessible ARIA landmarks.
-- [x] **Modern CSS3**: Flexbox & CSS Grid, Apple-inspired porcelain palette, no external UI frameworks.
-- [x] **Vanilla JavaScript**: Modular code (`storage.js`, `tasks.js`, `goals.js`, `app.js`), zero framework dependencies.
-- [x] **LocalStorage Persistence**: Auto-save on every state change, seamless page refresh survival.
-- [x] **Responsive Design**: Flawless layout on desktop, laptop, tablet, and mobile screens.
-- [x] **Error Handling**: Empty states, invalid inputs, and delete confirmation safeguards.
-- [x] **Live GitHub Pages Deployment**: Fully deployed and verified accessible worldwide.
+- [x] **Capitalio UI Redesign**: Accurately styled after Capitalio Wealth Management Dashboard on Watermelon UI.
+- [x] **Dark & Light Mode**: Complete dual theme support with instant toggle and local persistence.
+- [x] **Pure Vanilla Stack**: Semantic HTML5, CSS3 Grid/Flexbox, Vanilla JavaScript ES6+, LocalStorage. Zero framework bloat.
+- [x] **Data Persistence**: Changes persist across reloads; deleted tasks never reappear.
+- [x] **Charts & Visualizations**: Pure SVG Area Velocity Chart and SVG Priority Allocation Donut Chart.
+- [x] **Responsive**: Seamlessly scales from desktop monitors to tablets and mobile phones.
+- [x] **Live Deployed**: Accessible worldwide via GitHub Pages.
 
 ---
 
-<sub>FocusFlow &bull; Engineered with craftsmanship by **Sameera Bhanu** &bull; &copy; 2026</sub>
+<sub>Capitalio FocusFlow &bull; Engineered with craftsmanship by **Sameera Bhanu** &bull; &copy; 2026</sub>
