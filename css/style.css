@@ -1,68 +1,69 @@
 /* ==========================================================================
-   Capitalio Design System — Personal Productivity Dashboard
-   Inspired by Capitalio Dashboard (Watermelon UI)
+   Capitalio FocusFlow — Full Glassmorphism Design System
+   Inspired by Capitalio Dashboard & Modern Frosted Glass Aesthetics
    Developer: Sameera Bhanu | B.Tech CSE (First Year)
    ========================================================================== */
 
 :root {
-  --radius: 0.5rem;
-  --radius-sm: 0.375rem;
-  --radius-lg: 0.75rem;
+  --radius: 0.75rem;
+  --radius-sm: 0.5rem;
+  --radius-lg: 1rem;
   --radius-full: 9999px;
   
-  /* Capitalio Light Theme Colors */
-  --background: #FFFFFF;
-  --foreground: #141416;
-  --card: #FFFFFF;
-  --card-foreground: #141416;
-  --card-hover: #F8F8FA;
-  --popover: #FFFFFF;
-  --popover-foreground: #141416;
+  /* Glass Light Theme Canvas */
+  --bg-gradient: radial-gradient(at 0% 0%, #F0F4FF 0%, #FDFBFF 50%, #F5F3FF 100%);
+  --background: #F3F4F8;
+  --foreground: #0F172A;
   
+  /* Frosted Glass Surface Tokens (Light) */
+  --glass-bg: rgba(255, 255, 255, 0.62);
+  --glass-bg-hover: rgba(255, 255, 255, 0.78);
+  --glass-bg-elevated: rgba(255, 255, 255, 0.82);
+  --glass-border: rgba(255, 255, 255, 0.65);
+  --glass-border-subtle: rgba(255, 255, 255, 0.45);
+  --glass-border-specular: rgba(255, 255, 255, 0.9);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.06), 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+  --glass-shadow-hover: 0 12px 40px 0 rgba(31, 38, 135, 0.12), 0 2px 6px 0 rgba(0, 0, 0, 0.04);
+  --glass-blur: blur(20px) saturate(180%);
+  
+  /* Color Accents */
   --primary: #2563EB;
   --primary-hover: #1D4ED8;
+  --primary-glass: rgba(37, 99, 235, 0.12);
+  --primary-glass-border: rgba(37, 99, 235, 0.28);
   --primary-foreground: #FFFFFF;
   
-  --secondary: #F4F4F6;
-  --secondary-hover: #EBEBEF;
-  --secondary-foreground: #1E2024;
+  --secondary-glass: rgba(255, 255, 255, 0.45);
+  --secondary-glass-hover: rgba(255, 255, 255, 0.7);
+  --secondary-foreground: #1E293B;
   
-  --muted: #F4F4F6;
-  --muted-foreground: #71717A;
-  
-  --accent: #F4F4F6;
-  --accent-foreground: #141416;
+  --muted-foreground: #64748B;
+  --text-disabled: #94A3B8;
   
   --destructive: #EF4444;
-  --destructive-soft: rgba(239, 68, 68, 0.1);
+  --destructive-glass: rgba(239, 68, 68, 0.12);
+  --destructive-glass-border: rgba(239, 68, 68, 0.25);
   --destructive-foreground: #FFFFFF;
   
-  --border: #E5E7EB;
-  --border-subtle: #F0F1F3;
-  --input: #E5E7EB;
-  --ring: var(--primary);
-  
-  /* Chart Accents (Capitalio Palette) */
+  /* Chart Spectrum */
   --chart-1: #2563EB;
-  --chart-2: #7466F6;
-  --chart-3: #FF7A00;
-  --chart-4: #00DA92;
-  --chart-5: #E10B05;
+  --chart-2: #8B5CF6;
+  --chart-3: #F59E0B;
+  --chart-4: #10B981;
+  --chart-5: #EF4444;
   
   /* Brushed Conic Metallic Icon Background */
   --dashboard-icon-bg: conic-gradient(from 90deg, #5e5959 0%, #413f3f 6.25%, #242424 12.5%, #1d1b1b 28.481%, #2c2a2a 31.034%, #3b3838 33.588%, #585656 38.694%, #3e3c3c 46.951%, #242222 55.208%, #353232 62.885%, #464242 70.562%, #353333 76.351%, #242424 82.14%, #413f3f 91.07%, #5e5959 100%);
-  --dashboard-icon-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+  --dashboard-icon-shadow: 0 4px 10px rgba(0, 0, 0, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.3);
   
   /* Sidebar Tokens */
   --sidebar-width: 16rem;
-  --sidebar: #FFFFFF;
-  --sidebar-foreground: #52525B;
-  --sidebar-primary: var(--primary);
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #F4F4F6;
-  --sidebar-accent-foreground: #141416;
-  --sidebar-border: #E5E7EB;
-  --sidebar-active-shadow: inset 0 0 4px 2px rgba(0, 0, 0, 0.03), 0 0 5px rgba(0, 0, 0, 0.08);
+  --sidebar-glass: rgba(255, 255, 255, 0.68);
+  --sidebar-border: rgba(255, 255, 255, 0.65);
+  
+  /* Topbar Tokens */
+  --topbar-glass: rgba(255, 255, 255, 0.68);
+  --topbar-border: rgba(255, 255, 255, 0.65);
   
   /* Premium Gold Badge */
   --premium-from: #EFE189;
@@ -70,53 +71,53 @@
   --premium-to: #E7AD00;
   --premium-foreground: #5A3300;
   
-  /* Elevation Shadows */
-  --shadow-custom: inset 4px 0 4px 0 rgba(0, 0, 0, 0.01), 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.03);
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.03);
-  --shadow-modal: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-  
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Capitalio Dark Theme Colors */
+/* ==========================================================================
+   Glassmorphism Dark Theme
+   ========================================================================== */
 [data-theme="dark"],
 .dark {
-  --background: #151517;
-  --foreground: #FFFFFF;
-  --card: #151517;
-  --card-foreground: #FFFFFF;
-  --card-hover: #1E1E22;
-  --popover: #18181B;
-  --popover-foreground: #FFFFFF;
+  --bg-gradient: radial-gradient(at 0% 0%, #0F172A 0%, #090D16 50%, #0B0E17 100%);
+  --background: #090D16;
+  --foreground: #F8FAFC;
   
-  --secondary: #202024;
-  --secondary-hover: #27272C;
-  --secondary-foreground: #FFFFFF;
+  /* Frosted Glass Surface Tokens (Dark) */
+  --glass-bg: rgba(18, 24, 38, 0.58);
+  --glass-bg-hover: rgba(24, 32, 50, 0.72);
+  --glass-bg-elevated: rgba(24, 32, 52, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-subtle: rgba(255, 255, 255, 0.04);
+  --glass-border-specular: rgba(255, 255, 255, 0.12);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --glass-shadow-hover: 0 14px 45px 0 rgba(0, 0, 0, 0.6), 0 2px 6px 0 rgba(0, 0, 0, 0.4);
+  --glass-blur: blur(24px) saturate(190%);
   
-  --muted: #202024;
-  --muted-foreground: #9E9EA4;
+  --primary-glass: rgba(37, 99, 235, 0.22);
+  --primary-glass-border: rgba(59, 130, 246, 0.4);
   
-  --accent: #202024;
-  --accent-foreground: #FFFFFF;
+  --secondary-glass: rgba(255, 255, 255, 0.05);
+  --secondary-glass-hover: rgba(255, 255, 255, 0.1);
+  --secondary-foreground: #F8FAFC;
   
-  --border: #26262B;
-  --border-subtle: #1E1E22;
-  --input: #26262B;
+  --muted-foreground: #94A3B8;
+  --text-disabled: #64748B;
   
-  --sidebar: #151517;
-  --sidebar-foreground: #A1A1AA;
-  --sidebar-accent: #202024;
-  --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: #26262B;
-  --sidebar-active-shadow: inset 0 0 4px 2px rgba(255, 255, 255, 0.03), 0 0 5px rgba(0, 0, 0, 0.6);
+  --destructive-glass: rgba(239, 68, 68, 0.2);
+  --destructive-glass-border: rgba(239, 68, 68, 0.4);
   
-  --shadow-custom: inset 4px 0 4px 0 rgba(255, 255, 255, 0.02), 0 2px 4px rgba(0, 0, 0, 0.2);
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-modal: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  --sidebar-glass: rgba(12, 17, 29, 0.68);
+  --sidebar-border: rgba(255, 255, 255, 0.07);
+  
+  --topbar-glass: rgba(12, 17, 29, 0.68);
+  --topbar-border: rgba(255, 255, 255, 0.07);
 }
 
-/* Base Reset & Core Setup */
+/* ==========================================================================
+   Base Setup & Ambient Gradient Glow Mesh (Behind the Glass)
+   ========================================================================== */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -126,23 +127,89 @@
 html, body {
   height: 100%;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg-gradient);
   background-color: var(--background);
   color: var(--foreground);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
-/* App Outer Wrapper */
+/* Ambient Glowing Light Orbs for Refraction */
+.ambient-mesh-canvas {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.45;
+  animation: floatGlow 18s ease-in-out infinite alternate;
+}
+
+.ambient-orb-1 {
+  width: 520px;
+  height: 520px;
+  top: -100px;
+  left: 5%;
+  background: radial-gradient(circle, #3B82F6 0%, #60A5FA 40%, transparent 75%);
+  animation-duration: 20s;
+}
+
+.ambient-orb-2 {
+  width: 600px;
+  height: 600px;
+  bottom: -120px;
+  right: 5%;
+  background: radial-gradient(circle, #8B5CF6 0%, #A855F7 40%, transparent 75%);
+  animation-duration: 25s;
+  animation-delay: -5s;
+}
+
+.ambient-orb-3 {
+  width: 480px;
+  height: 480px;
+  top: 40%;
+  left: 42%;
+  background: radial-gradient(circle, #10B981 0%, #34D399 40%, transparent 75%);
+  animation-duration: 22s;
+  animation-delay: -10s;
+}
+
+@keyframes floatGlow {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, 40px) scale(1.08);
+  }
+  100% {
+    transform: translate(-30px, -20px) scale(0.95);
+  }
+}
+
+/* Dark mode orb adjustments */
+[data-theme="dark"] .ambient-orb {
+  opacity: 0.32;
+}
+
+/* App Outer Layout */
 .capitalio-app-layout {
+  position: relative;
   display: flex;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background-color: var(--background);
+  z-index: 1;
 }
 
-/* Custom Scrollbar */
+/* Custom Glass Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -151,7 +218,7 @@ html, body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: var(--glass-border);
   border-radius: var(--radius-full);
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -159,15 +226,18 @@ html, body {
 }
 
 /* ==========================================================================
-   1. Left Sidebar Navigation
+   1. Left Sidebar Navigation (Frosted Glass)
    ========================================================================== */
 .capitalio-sidebar {
   width: var(--sidebar-width);
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: var(--sidebar);
+  background: var(--sidebar-glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   border-right: 1px solid var(--sidebar-border);
+  box-shadow: 4px 0 24px 0 rgba(0, 0, 0, 0.04);
   flex-shrink: 0;
   padding: 1.25rem 1rem;
   transition: transform var(--transition-normal);
@@ -179,7 +249,7 @@ html, body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.25rem 0.5rem 1.5rem;
+  padding: 0.25rem 0.5rem 1.35rem;
   border-bottom: 1px solid var(--sidebar-border);
   margin-bottom: 1.25rem;
 }
@@ -193,7 +263,7 @@ html, body {
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
-  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.4);
   flex-shrink: 0;
 }
 
@@ -217,23 +287,23 @@ html, body {
   font-weight: 500;
 }
 
-/* Navigation Section Groups */
+/* Navigation Menu */
 .sidebar-nav-scroll {
   flex: 1;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.35rem;
   padding-right: 0.25rem;
 }
 
 .nav-group-label {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: var(--muted-foreground);
-  padding: 0 0.65rem 0.5rem;
+  padding: 0 0.65rem 0.45rem;
 }
 
 .nav-menu {
@@ -249,18 +319,20 @@ html, body {
   justify-content: space-between;
   padding: 0.65rem 0.75rem;
   border-radius: var(--radius-sm);
-  color: var(--sidebar-foreground);
+  color: var(--muted-foreground);
   text-decoration: none;
   font-size: 0.88rem;
   font-weight: 500;
   transition: all var(--transition-fast);
   cursor: pointer;
   border: 1px solid transparent;
+  background: transparent;
 }
 
 .nav-link:hover {
-  background-color: var(--sidebar-accent);
-  color: var(--sidebar-accent-foreground);
+  background: var(--secondary-glass-hover);
+  color: var(--foreground);
+  border-color: var(--glass-border-subtle);
 }
 
 .nav-link-left {
@@ -283,26 +355,27 @@ html, body {
   font-weight: 600;
   padding: 0.15rem 0.45rem;
   border-radius: var(--radius-full);
-  background-color: var(--secondary);
+  background: var(--secondary-glass);
+  border: 1px solid var(--glass-border-subtle);
   color: var(--muted-foreground);
 }
 
-/* Capitalio Active Sidebar Item (Signature Gradient Border Glow) */
+/* Active Navigation Item (Glass Glow) */
 .nav-link.active-sidebar-item {
-  position: relative;
-  background-color: var(--sidebar-accent);
+  background: var(--primary-glass);
   color: var(--foreground);
   font-weight: 600;
-  box-shadow: var(--sidebar-active-shadow);
-  border-color: var(--border);
+  border: 1px solid var(--primary-glass-border);
+  box-shadow: inset 0 0 12px rgba(37, 99, 235, 0.08), 0 2px 8px rgba(37, 99, 235, 0.12);
 }
 
 .nav-link.active-sidebar-item .nav-badge {
-  background-color: var(--primary);
+  background: var(--primary);
   color: #FFFFFF;
+  border-color: var(--primary);
 }
 
-/* Sidebar Footer & User Profile */
+/* Sidebar User Footer */
 .sidebar-footer {
   padding-top: 1rem;
   border-top: 1px solid var(--sidebar-border);
@@ -321,8 +394,8 @@ html, body {
 }
 
 .user-avatar {
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.35rem;
+  height: 2.35rem;
   border-radius: var(--radius-sm);
   background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
   color: #38BDF8;
@@ -332,7 +405,8 @@ html, body {
   font-size: 0.85rem;
   font-weight: 700;
   flex-shrink: 0;
-  border: 1px solid var(--border);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .user-details {
@@ -342,7 +416,7 @@ html, body {
 }
 
 .user-name {
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 600;
   color: var(--foreground);
   white-space: nowrap;
@@ -362,15 +436,16 @@ html, body {
   background: linear-gradient(90deg, #EFE189 0%, #EBC745 50%, #E7AD00 100%);
   color: #5A3300;
   margin-top: 0.15rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* Sidebar Action Buttons */
+/* Theme Toggle Button */
 .theme-toggle-btn {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background: var(--card);
+  border: 1px solid var(--glass-border);
+  background: var(--secondary-glass);
   color: var(--muted-foreground);
   display: flex;
   align-items: center;
@@ -380,12 +455,13 @@ html, body {
 }
 
 .theme-toggle-btn:hover {
-  background: var(--secondary);
+  background: var(--secondary-glass-hover);
   color: var(--foreground);
+  border-color: var(--primary);
 }
 
 /* ==========================================================================
-   2. Main Layout Container & Topbar
+   2. Main Layout Container & Frosted Topbar
    ========================================================================== */
 .capitalio-main {
   flex: 1;
@@ -394,20 +470,22 @@ html, body {
   min-width: 0;
   height: 100%;
   overflow: hidden;
-  background-color: var(--background);
-  box-shadow: var(--shadow-custom);
 }
 
-/* Capitalio Topbar */
+/* Frosted Glass Topbar */
 .capitalio-topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
   padding: 0.85rem 1.75rem;
-  border-bottom: 1px solid var(--border);
-  background-color: var(--card);
+  background: var(--topbar-glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--topbar-border);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.02);
   flex-shrink: 0;
+  z-index: 40;
 }
 
 .topbar-left {
@@ -433,7 +511,7 @@ html, body {
 }
 
 .topbar-title {
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--foreground);
@@ -454,7 +532,8 @@ html, body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background-color: var(--border);
+  background-color: var(--muted-foreground);
+  opacity: 0.6;
 }
 
 .topbar-right {
@@ -464,7 +543,7 @@ html, body {
   flex-shrink: 0;
 }
 
-/* Search Box */
+/* Glass Search Box */
 .topbar-search {
   position: relative;
   display: flex;
@@ -475,8 +554,10 @@ html, body {
   height: 2.25rem;
   width: 220px;
   padding: 0 2rem 0 2.25rem;
-  background-color: var(--secondary);
-  border: 1px solid var(--border);
+  background: var(--secondary-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-sm);
   color: var(--foreground);
   font-size: 0.84rem;
@@ -487,8 +568,8 @@ html, body {
 .search-input:focus {
   width: 260px;
   border-color: var(--primary);
-  background-color: var(--card);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  background: var(--glass-bg-elevated);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
 }
 
 .search-icon-svg {
@@ -508,25 +589,27 @@ html, body {
   cursor: pointer;
 }
 
-/* Date Range Pill */
+/* Glass Date Range Pill */
 .date-range-badge {
   display: flex;
   align-items: center;
   gap: 0.45rem;
   height: 2.25rem;
   padding: 0 0.85rem;
-  background-color: var(--card);
-  border: 1px solid var(--border);
+  background: var(--secondary-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-sm);
   font-size: 0.82rem;
   color: var(--muted-foreground);
 }
 
-/* Period Switcher Segment */
+/* Glass Period Switcher */
 .period-segmented-control {
   display: flex;
-  background-color: var(--secondary);
-  border: 1px solid var(--border);
+  background: var(--secondary-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-sm);
   padding: 2px;
 }
@@ -544,13 +627,13 @@ html, body {
 }
 
 .period-btn.active {
-  background-color: var(--card);
-  color: var(--foreground);
+  background: var(--primary);
+  color: #FFFFFF;
   font-weight: 600;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.3);
 }
 
-/* Buttons */
+/* Glass Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -568,23 +651,27 @@ html, body {
 }
 
 .btn-primary {
-  background-color: var(--primary);
+  background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%);
   color: var(--primary-foreground);
-  box-shadow: 0 1px 2px rgba(37, 99, 235, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.3);
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-hover);
+  background: linear-gradient(135deg, #1E40AF 0%, #1D4ED8 100%);
+  transform: translateY(-1px);
 }
 
 .btn-secondary {
-  background-color: var(--secondary);
+  background: var(--secondary-glass);
   color: var(--foreground);
-  border: 1px solid var(--border);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
 }
 
 .btn-secondary:hover {
-  background-color: var(--secondary-hover);
+  background: var(--secondary-glass-hover);
+  border-color: var(--foreground);
 }
 
 .btn-sm {
@@ -594,38 +681,42 @@ html, body {
 }
 
 .btn-danger {
-  background-color: var(--destructive);
+  background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
   color: var(--destructive-foreground);
-}
-
-.btn-danger:hover {
-  opacity: 0.9;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
 }
 
 /* ==========================================================================
-   3. Content Body & Grid Structure
+   3. Content Body & Universal Glass Card
    ========================================================================== */
 .capitalio-content-scroll {
   flex: 1;
   overflow-y: auto;
-  padding: 1.5rem 1.75rem 3rem;
+  padding: 1.5rem 1.75rem 3.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
 
-/* Universal Dashboard Card */
+/* Signature Glass Card */
 .dashboard-card {
-  background-color: var(--card);
-  border: 1px solid var(--border);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius);
-  padding: 1.25rem 1.35rem;
-  box-shadow: var(--shadow-card);
-  color: var(--card-foreground);
+  padding: 1.35rem 1.45rem;
+  box-shadow: var(--glass-shadow);
+  color: var(--foreground);
   position: relative;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
 
-/* Dot Grid Background for Charts */
+.dashboard-card:hover {
+  border-color: var(--glass-border-specular);
+}
+
+/* Dot Grid Pattern for Glass Chart Containers */
 .dashboard-dot-grid {
   background-image: radial-gradient(
     circle,
@@ -635,7 +726,7 @@ html, body {
   background-size: 1.25rem 1.25rem;
 }
 
-/* Detail Headers & Tags */
+/* Detail Headers & Glass Tags */
 .detail-header {
   display: flex;
   align-items: center;
@@ -663,25 +754,29 @@ html, body {
   border-radius: var(--radius-sm);
   font-size: 0.75rem;
   font-weight: 600;
+  backdrop-filter: blur(10px);
 }
 
 .detail-tag-blue {
   color: var(--chart-1);
-  background-color: rgba(37, 99, 235, 0.1);
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.25);
 }
 
 .detail-tag-green {
   color: var(--chart-4);
-  background-color: rgba(0, 218, 146, 0.12);
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.25);
 }
 
 .detail-tag-amber {
   color: var(--chart-3);
-  background-color: rgba(255, 122, 0, 0.12);
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.25);
 }
 
 /* ==========================================================================
-   4. Top 4 Summary Cards Grid
+   4. Top 4 Summary Cards Grid (Glass)
    ========================================================================== */
 .summary-cards-grid {
   display: grid;
@@ -693,14 +788,13 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 150px;
+  min-height: 155px;
   gap: 0.75rem;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .summary-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--glass-shadow-hover);
 }
 
 .summary-card-top {
@@ -717,8 +811,8 @@ html, body {
 
 /* Conic Metallic Icon Badge */
 .dashboard-icon-badge {
-  width: 2rem;
-  height: 2rem;
+  width: 2.15rem;
+  height: 2.15rem;
   border-radius: var(--radius-sm);
   background-image: var(--dashboard-icon-bg);
   box-shadow: var(--dashboard-icon-shadow);
@@ -727,6 +821,7 @@ html, body {
   justify-content: center;
   color: #FFFFFF;
   flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .summary-card-body {
@@ -736,8 +831,8 @@ html, body {
 }
 
 .summary-card-value {
-  font-size: 1.85rem;
-  font-weight: 700;
+  font-size: 1.95rem;
+  font-weight: 800;
   letter-spacing: -0.03em;
   color: var(--foreground);
   line-height: 1;
@@ -761,7 +856,6 @@ html, body {
   font-weight: 600;
 }
 
-/* Mini Sparkline Visualization */
 .summary-card-viz {
   height: 38px;
   width: 100%;
@@ -782,16 +876,11 @@ html, body {
   gap: 1rem;
 }
 
-/* Velocity Chart Panel */
-.velocity-chart-card {
-  display: flex;
-  flex-direction: column;
-}
-
+/* Embedded Weekly Glass Calendar Strip */
 .weekly-strip-embedded {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 0.4rem;
+  gap: 0.45rem;
   margin-bottom: 1rem;
 }
 
@@ -799,28 +888,30 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.45rem 0.25rem;
-  background-color: var(--secondary);
-  border: 1px solid var(--border);
+  padding: 0.5rem 0.25rem;
+  background: var(--secondary-glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .day-chip:hover {
-  background-color: var(--secondary-hover);
-  border-color: var(--muted-foreground);
+  background: var(--secondary-glass-hover);
+  border-color: var(--foreground);
 }
 
 .day-chip.is-today {
   border-color: var(--primary);
-  background-color: rgba(37, 99, 235, 0.08);
+  background: var(--primary-glass);
 }
 
 .day-chip.is-selected {
-  background-color: var(--primary);
+  background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%);
   color: #FFFFFF;
-  border-color: var(--primary);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
 }
 
 .day-chip.is-selected .day-chip-name,
@@ -849,14 +940,15 @@ html, body {
   margin-top: 0.2rem;
 }
 
-/* Main Area Chart Container */
+/* Main Area Chart Container (Glass) */
 .chart-container-wrap {
   position: relative;
   width: 100%;
   height: 220px;
   border-radius: var(--radius-sm);
   overflow: hidden;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .area-chart-svg {
@@ -865,14 +957,14 @@ html, body {
   display: block;
 }
 
-/* Bottom Velocity KPIs Strip */
+/* Velocity KPIs Strip */
 .velocity-kpi-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   padding-top: 1.15rem;
   margin-top: 1rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--glass-border);
 }
 
 .velocity-kpi-item {
@@ -902,13 +994,7 @@ html, body {
   gap: 0.2rem;
 }
 
-/* Donut Chart Allocation Panel */
-.allocation-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
+/* Priority Allocation Donut Card */
 .donut-chart-wrap {
   position: relative;
   display: flex;
@@ -933,7 +1019,7 @@ html, body {
 }
 
 .donut-center-number {
-  font-size: 1.5rem;
+  font-size: 1.55rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--foreground);
@@ -945,7 +1031,6 @@ html, body {
   font-weight: 500;
 }
 
-/* Allocation Legend Rows */
 .allocation-rows {
   display: flex;
   flex-direction: column;
@@ -957,6 +1042,10 @@ html, body {
   align-items: center;
   justify-content: space-between;
   font-size: 0.82rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--secondary-glass);
+  border: 1px solid var(--glass-border-subtle);
 }
 
 .allocation-row-left {
@@ -983,7 +1072,7 @@ html, body {
 }
 
 /* ==========================================================================
-   6. Bottom Row: Tasks Table & Goals / Smart Insights
+   6. Bottom Row: Glass Holdings Table & Goals / Insights
    ========================================================================== */
 .bottom-grid {
   display: grid;
@@ -991,12 +1080,7 @@ html, body {
   gap: 1rem;
 }
 
-/* Tasks Management Holdings Table */
-.holdings-card {
-  display: flex;
-  flex-direction: column;
-}
-
+/* Table Toolbar */
 .table-toolbar {
   display: flex;
   align-items: center;
@@ -1007,8 +1091,9 @@ html, body {
 
 .filter-segments {
   display: flex;
-  background-color: var(--secondary);
-  border: 1px solid var(--border);
+  background: var(--secondary-glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-sm);
   padding: 2px;
 }
@@ -1026,24 +1111,25 @@ html, body {
 }
 
 .filter-seg-btn.active {
-  background-color: var(--card);
-  color: var(--foreground);
+  background: var(--primary);
+  color: #FFFFFF;
   font-weight: 600;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.3);
 }
 
-/* Filter Alert Banner */
+/* Day Filter Alert Banner */
 .day-filter-alert {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(37, 99, 235, 0.08);
-  border: 1px solid rgba(37, 99, 235, 0.2);
+  background: var(--primary-glass);
+  border: 1px solid var(--primary-glass-border);
   border-radius: var(--radius-sm);
   padding: 0.45rem 0.85rem;
   margin-bottom: 0.85rem;
   font-size: 0.82rem;
   color: var(--primary);
+  backdrop-filter: blur(10px);
 }
 
 .alert-clear-btn {
@@ -1055,7 +1141,7 @@ html, body {
   line-height: 1;
 }
 
-/* Holdings Table Structure */
+/* Glass Data Table */
 .tasks-data-table {
   width: 100%;
   border-collapse: separate;
@@ -1063,48 +1149,47 @@ html, body {
 }
 
 .table-head-row {
-  background-color: var(--secondary);
-  border-radius: var(--radius-sm);
+  background: var(--secondary-glass);
+  backdrop-filter: blur(10px);
 }
 
 .table-head-row th {
-  padding: 0.65rem 0.75rem;
+  padding: 0.7rem 0.75rem;
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--muted-foreground);
   text-align: left;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .table-head-row th:first-child {
   border-top-left-radius: var(--radius-sm);
   border-bottom-left-radius: var(--radius-sm);
-  border-left: 1px solid var(--border);
+  border-left: 1px solid var(--glass-border);
 }
 
 .table-head-row th:last-child {
   border-top-right-radius: var(--radius-sm);
   border-bottom-right-radius: var(--radius-sm);
-  border-right: 1px solid var(--border);
+  border-right: 1px solid var(--glass-border);
   text-align: right;
 }
 
 .task-row {
-  transition: background-color var(--transition-fast);
-  border-bottom: 1px solid var(--border-subtle);
+  transition: background var(--transition-fast);
 }
 
 .task-row:hover {
-  background-color: var(--card-hover);
+  background: var(--secondary-glass-hover);
 }
 
 .task-row td {
   padding: 0.85rem 0.75rem;
   font-size: 0.85rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--glass-border-subtle);
   vertical-align: middle;
 }
 
@@ -1122,16 +1207,17 @@ html, body {
 }
 
 .task-type-icon {
-  width: 2.15rem;
-  height: 2.15rem;
+  width: 2.2rem;
+  height: 2.2rem;
   border-radius: var(--radius-sm);
-  background-color: var(--secondary);
-  border: 1px solid var(--border);
+  background: var(--secondary-glass);
+  border: 1px solid var(--glass-border);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--primary);
   flex-shrink: 0;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4);
 }
 
 .task-title-group {
@@ -1164,7 +1250,7 @@ html, body {
   max-width: 280px;
 }
 
-/* Priority Badges */
+/* Glass Priority Badges */
 .priority-pill {
   display: inline-flex;
   align-items: center;
@@ -1173,24 +1259,27 @@ html, body {
   font-size: 0.72rem;
   font-weight: 600;
   line-height: 1;
+  backdrop-filter: blur(8px);
 }
 
 .priority-high {
-  background-color: rgba(225, 11, 5, 0.1);
+  background: rgba(239, 68, 68, 0.15);
   color: var(--chart-5);
+  border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
 .priority-medium {
-  background-color: rgba(255, 122, 0, 0.1);
+  background: rgba(245, 158, 11, 0.15);
   color: var(--chart-3);
+  border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 .priority-low {
-  background-color: rgba(116, 102, 246, 0.1);
+  background: rgba(139, 92, 246, 0.15);
   color: var(--chart-2);
+  border: 1px solid rgba(139, 92, 246, 0.3);
 }
 
-/* Due Date Badge */
 .date-pill {
   font-size: 0.78rem;
   color: var(--muted-foreground);
@@ -1201,13 +1290,13 @@ html, body {
   font-weight: 600;
 }
 
-/* Custom Checkbox */
+/* Custom Glass Checkbox */
 .task-check-box {
-  width: 1.25rem;
-  height: 1.25rem;
-  border-radius: 4px;
-  border: 1.5px solid var(--border);
-  background-color: var(--card);
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 5px;
+  border: 1.5px solid var(--glass-border);
+  background: var(--secondary-glass);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1217,15 +1306,16 @@ html, body {
 
 .task-check-box:hover {
   border-color: var(--primary);
+  background: var(--primary-glass);
 }
 
 .task-row.is-completed .task-check-box {
-  background-color: var(--chart-4);
+  background: var(--chart-4);
   border-color: var(--chart-4);
   color: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.4);
 }
 
-/* Action Icon Buttons */
 .row-actions-cell {
   text-align: right;
   white-space: nowrap;
@@ -1243,15 +1333,14 @@ html, body {
 
 .action-btn-icon:hover {
   color: var(--foreground);
-  background-color: var(--secondary);
+  background: var(--secondary-glass);
 }
 
 .action-btn-icon.delete:hover {
   color: var(--destructive);
-  background-color: var(--destructive-soft);
+  background: var(--destructive-glass);
 }
 
-/* Empty State */
 .table-empty-box {
   text-align: center;
   padding: 2.5rem 1rem;
@@ -1263,7 +1352,7 @@ html, body {
 }
 
 /* ==========================================================================
-   7. Goals & Smart Insights Column
+   7. Goals & Smart Insights Column (Glass)
    ========================================================================== */
 .insights-card {
   display: flex;
@@ -1271,28 +1360,29 @@ html, body {
   gap: 1.25rem;
 }
 
-/* Daily Goals Sub-block */
 .goals-subblock {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .goal-progress-track {
   width: 100%;
-  height: 6px;
-  background-color: var(--secondary);
+  height: 7px;
+  background: var(--secondary-glass);
   border-radius: var(--radius-full);
   overflow: hidden;
+  border: 1px solid var(--glass-border-subtle);
 }
 
 .goal-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #2563EB 0%, #00DA92 100%);
+  background: linear-gradient(90deg, #2563EB 0%, #10B981 100%);
   border-radius: var(--radius-full);
   transition: width 0.4s ease;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
 }
 
 .add-goal-inline-form {
@@ -1302,10 +1392,11 @@ html, body {
 
 .goal-input {
   flex: 1;
-  height: 2.15rem;
+  height: 2.2rem;
   padding: 0 0.75rem;
-  background-color: var(--secondary);
-  border: 1px solid var(--border);
+  background: var(--secondary-glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-sm);
   color: var(--foreground);
   font-size: 0.82rem;
@@ -1314,7 +1405,7 @@ html, body {
 
 .goal-input:focus {
   border-color: var(--primary);
-  background-color: var(--card);
+  background: var(--glass-bg-elevated);
 }
 
 .goals-list-wrap {
@@ -1329,15 +1420,16 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.55rem 0.65rem;
+  padding: 0.6rem 0.75rem;
   border-radius: var(--radius-sm);
-  background-color: var(--secondary);
-  border: 1px solid var(--border-subtle);
+  background: var(--secondary-glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border-subtle);
   transition: all var(--transition-fast);
 }
 
 .goal-row:hover {
-  border-color: var(--border);
+  border-color: var(--glass-border);
 }
 
 .goal-row.is-done {
@@ -1359,11 +1451,11 @@ html, body {
 }
 
 .goal-checkbox {
-  width: 1rem;
-  height: 1rem;
-  border-radius: 3px;
-  border: 1.5px solid var(--border);
-  background-color: var(--card);
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 4px;
+  border: 1.5px solid var(--glass-border);
+  background: var(--secondary-glass);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1371,7 +1463,7 @@ html, body {
 }
 
 .goal-row.is-done .goal-checkbox {
-  background-color: var(--chart-4);
+  background: var(--chart-4);
   border-color: var(--chart-4);
   color: #FFFFFF;
 }
@@ -1391,13 +1483,14 @@ html, body {
   color: var(--muted-foreground);
   cursor: pointer;
   padding: 2px 4px;
+  font-size: 1rem;
 }
 
 .goal-del-btn:hover {
   color: var(--destructive);
 }
 
-/* Smart Insights Items */
+/* Smart Insights */
 .insights-subblock {
   display: flex;
   flex-direction: column;
@@ -1407,18 +1500,16 @@ html, body {
 .insight-item {
   display: flex;
   gap: 0.75rem;
-  padding-bottom: 0.85rem;
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.insight-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
+  padding: 0.65rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: var(--secondary-glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border-subtle);
 }
 
 .insight-icon-box {
-  width: 2rem;
-  height: 2rem;
+  width: 2.15rem;
+  height: 2.15rem;
   border-radius: var(--radius-sm);
   background-image: var(--dashboard-icon-bg);
   box-shadow: var(--dashboard-icon-shadow);
@@ -1427,6 +1518,7 @@ html, body {
   justify-content: center;
   color: #FFFFFF;
   flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .insight-body {
@@ -1449,13 +1541,14 @@ html, body {
 }
 
 /* ==========================================================================
-   8. Modals & Dialogs (Capitalio Style)
+   8. Frosted Glass Modals
    ========================================================================== */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1474,10 +1567,12 @@ html, body {
 .modal-window {
   width: 100%;
   max-width: 500px;
-  background-color: var(--card);
-  border: 1px solid var(--border);
+  background: var(--glass-bg-elevated);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+  border: 1px solid var(--glass-border-specular);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-modal);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.4);
   transform: scale(0.95) translateY(10px);
   transition: transform var(--transition-normal);
   overflow: hidden;
@@ -1492,11 +1587,11 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .modal-title-text {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
@@ -1504,7 +1599,7 @@ html, body {
 .modal-close-icon {
   background: transparent;
   border: none;
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   color: var(--muted-foreground);
   cursor: pointer;
 }
@@ -1531,9 +1626,10 @@ html, body {
 .form-input-control,
 .form-textarea-control {
   width: 100%;
-  padding: 0.6rem 0.75rem;
-  background-color: var(--secondary);
-  border: 1px solid var(--border);
+  padding: 0.65rem 0.8rem;
+  background: var(--secondary-glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-sm);
   color: var(--foreground);
   font-size: 0.88rem;
@@ -1544,8 +1640,8 @@ html, body {
 .form-input-control:focus,
 .form-textarea-control:focus {
   border-color: var(--primary);
-  background-color: var(--card);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  background: var(--glass-bg-elevated);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
 .form-split-row {
@@ -1554,7 +1650,6 @@ html, body {
   gap: 1rem;
 }
 
-/* Priority Radio Chips */
 .priority-chips-wrap {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1575,27 +1670,27 @@ html, body {
   font-size: 0.8rem;
   font-weight: 600;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background-color: var(--secondary);
+  border: 1px solid var(--glass-border);
+  background: var(--secondary-glass);
   color: var(--muted-foreground);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .priority-chip-opt input:checked + .chip-low {
-  background-color: var(--card);
+  background: rgba(139, 92, 246, 0.18);
   border-color: var(--chart-2);
   color: var(--chart-2);
 }
 
 .priority-chip-opt input:checked + .chip-medium {
-  background-color: rgba(255, 122, 0, 0.1);
+  background: rgba(245, 158, 11, 0.18);
   border-color: var(--chart-3);
   color: var(--chart-3);
 }
 
 .priority-chip-opt input:checked + .chip-high {
-  background-color: rgba(225, 11, 5, 0.1);
+  background: rgba(239, 68, 68, 0.18);
   border-color: var(--chart-5);
   color: var(--chart-5);
 }
@@ -1608,19 +1703,21 @@ html, body {
   padding-top: 0.5rem;
 }
 
-/* Toast Pill */
+/* Glass Toast Capsule */
 .toast-capsule {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background-color: #18181B;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   color: #FFFFFF;
-  border: 1px solid #27272A;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 0.65rem 1.15rem;
   border-radius: var(--radius-full);
   font-size: 0.84rem;
   font-weight: 500;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.2);
   z-index: 150;
   display: flex;
   align-items: center;
@@ -1656,7 +1753,7 @@ html, body {
     left: 0;
     bottom: 0;
     transform: translateX(-100%);
-    box-shadow: var(--shadow-modal);
+    box-shadow: var(--glass-shadow-hover);
   }
   .capitalio-sidebar.is-mobile-open {
     transform: translateX(0);
